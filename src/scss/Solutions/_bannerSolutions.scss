@@ -1,0 +1,32 @@
+.bannerSolutions{
+    padding: 0 130px;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    @media screen and (max-width:600px){
+        padding: 0 32px;
+    }
+}
+.bannerSolutions__background{
+    width: 100%;
+    position: absolute;
+    top: -5rem;
+    left: 0;
+}
+.bannerSolutions__container{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 5;
+    color: $content-dark-primary;
+    & > :nth-child(1){
+    }
+    & > :nth-child(2){
+        width: 25rem;
+        @media screen and (max-width:600px){
+            width: 100%;
+        }
+    }
+}

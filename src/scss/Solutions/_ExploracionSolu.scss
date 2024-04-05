@@ -1,0 +1,80 @@
+.exploSolutions{
+    padding: 0 130px;
+    height: 100vh;
+    display: flex;
+    align-items: center;    
+}
+.exploSolutions__container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 70px;
+}
+.exploSolutions__description{
+    & > :nth-child(2){
+        width: 50%;
+    }
+}
+.exploSolutions__cards{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+.exploSolutions__card{
+    padding: 10px 10px;
+    max-width: 250px;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    transition: ease .3s;
+    text-align: center;
+    background-color: white;
+    @media screen and (max-width: 768px){
+        max-width: 260px;
+        max-height: 310px;
+    }
+    &:hover{
+        border: 1px solid $yellow-primary;
+    }
+}
+.exploSolutions__content{
+
+}
+.exploSolutions__textOpacity{
+
+}
+.exploSolutions__more{
+    font-size: 25px;
+    font-weight: 500;
+}
+.exploSolution__circle{
+    display: flex;
+    gap: 3px;
+    & p{
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: black;
+    }
+    & > :nth-child(1){
+        animation: circleExploSolu 1.1s ease-in-out infinite .1s;
+    }
+    & > :nth-child(2){
+        animation: circleExploSolu 1.1s ease-in-out infinite .2s;
+    }
+    & > :nth-child(3){
+        animation: circleExploSolu 1.1s ease-in-out infinite .3s;
+    }
+}
+@keyframes circleExploSolu {
+    0%{
+        transform: scale(1);
+    }50%{
+        transform: scale(.5);
+    }100%{
+        transform: scale(1);
+    }
+}

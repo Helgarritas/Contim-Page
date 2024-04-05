@@ -1,0 +1,33 @@
+.bannerAbout{
+    padding: 0 130px;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    @media screen and (max-width: 768px){
+        padding: 0 32px;
+    }
+}
+.bannerAbout__container{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: $content-dark-primary;
+    z-index: 5;
+    @media screen and (max-width: 768px){
+        padding-top: 80%;
+    }
+    & > h1{
+    }
+    & > p{
+        width: 26rem;
+    }
+}
+.bannerAbout__background{
+    width: 100%;
+    position: absolute;
+    top: -8rem;
+    left: 0;
+    transition: ease .3s;
+}

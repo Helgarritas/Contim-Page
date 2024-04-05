@@ -1,0 +1,109 @@
+.commentsHome{
+    min-height: 100dvh;
+    padding: 60px 130px 180px 130px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    @media screen and (max-width: 1024px){
+        padding: 0 32px;
+        min-height: 100dvh;
+    }
+}
+.commentsHome__container{
+    padding-top: 5px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 90px;
+    position: relative;
+    border-top: .5px solid rgba(0,0,0,.3);
+}
+.commentsHome__descriptions{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.commentsHome__description{
+    & > h2{
+    }
+}
+.commentsHome__buttons{
+    padding-bottom: 1rem;
+    align-self: flex-end;
+    margin-left: auto;
+    display: flex;
+    gap: 30px;
+    border-bottom: 3px solid $yellow-primary;
+    & > button{
+        width: 60px;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: .5px solid $content-light-terceary;
+        border-radius: 50%;
+        transition: ease .3s;
+        cursor: pointer;
+        z-index: 5;
+    }
+}
+.commentsHome__slider{//* carrusel
+    width: 60vw;
+}
+.commentsHome__slider--container{
+    width: 400%;
+    display: flex;
+    gap: 150px;
+    transition: ease .4s;
+}
+.commentsHome__sliders{
+    color: rgba(0,0,0,1);
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    width: 25%;
+    & > p{
+        font-size: 30px;
+        font-weight: 400;
+    }
+    & > *{
+        transition: ease .3s;
+        
+    }
+}
+.commentsHome__slider--user{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    & > :nth-child(1){
+        width: 980px;
+        font-size: 25px;
+    }
+    & > :nth-child(2){
+    }
+}
+
+.commentsHome__circle{//* Circles
+    position: absolute;
+    background: $yellow-primary;
+    border-radius: 50%;
+}
+.commentsHome__circleS{
+    width: 80px;
+    height: 80px;
+    top: 40%;
+    left: 0;
+}
+.commentsHome__circleM{
+    width: 60px;
+    height: 60px;
+    bottom: -3rem;
+    left: 30%;
+}
+.commentsHome__circleX{
+    width: 40px;
+    height: 40px;
+    bottom: -5rem;
+    left: 20%;
+}

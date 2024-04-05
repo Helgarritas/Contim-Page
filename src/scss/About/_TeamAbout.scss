@@ -1,0 +1,116 @@
+.teamAbout{
+    padding: 80px 130px;
+    min-height : 100vh;
+    @media screen and (max-width: 768px){
+        padding: 80px 32px;
+    }
+}
+.teamAbout__container{
+    display: flex;
+    flex-direction: column;
+    gap: 70px;
+}
+.teamAbout__title{
+    font-size: 50px;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: -0.32px;
+}
+.teamAbout__subtitle{
+    padding-left: 25px;
+    font-size: 25px;
+    font-weight: 500;
+    letter-spacing: 0.01rem;
+    position: relative;
+    &::before{
+        content: '';
+        width: 100%;
+        height: .5px;
+        position: absolute;
+        top: -3px;
+        left: 0;
+        background: rgba(0,0,0,.3);
+        z-index: -1;
+    }
+        &::after{
+            content: '';
+            width: 10px;
+            height: 10px;
+            position: absolute;
+            left: 0;
+            top: 50%;
+            border-radius: 50%;
+            transform: translate(0,-50%);
+            background: rgba(0,0,0,.7);
+        }
+}
+.teamAbout__gerencia{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+.teamoAbout__cards{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    column-gap: 10px;
+    row-gap: 60px;
+    @media screen and (max-width: 768px){
+        align-items:center;
+    }
+}
+.teamoAbout__card{
+    padding: 10px 20px;
+    position: relative;
+    width: 250px;
+    height: 300px;
+    display: flex;
+    align-items: end;
+    overflow: hidden;
+    cursor: pointer;
+    &:hover .teamAbout__card--img{
+        filter: saturate(100%);
+    }
+    &:hover svg{
+        transform: translateX(0%);
+        opacity: 1;
+    }
+}
+.teamAbout__card--img{  
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    transition: ease .3s;
+    filter: saturate(0%);
+    z-index: -1;
+}
+.teamoAbout__card--content{
+    display: flex;
+}
+.teamAbout__card--user{
+    & > :nth-child(1){
+        font-size: 20px;
+        font-weight: 500;
+    }
+    & > :nth-child(2){
+
+    }
+}
+.teamoAbout__card--media{
+    position: absolute;
+    top: 0px;
+    right: 15px;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;  
+    & svg{
+        transition: ease .3s;
+        opacity: 0;
+        z-index: 5;
+        stroke: black;
+    }
+
+}

@@ -1,0 +1,112 @@
+.aboutHome{
+    padding: 0 130px;
+    display: flex;
+    align-items: center;
+    @media screen and (min-width: 600px){
+        padding: 0 32px;
+    }
+}
+.aboutHome__container{
+    width: 100%;
+    display: flex;
+}
+.aboutHome__content{
+    display: flex;
+    flex-direction: column;
+    &  span{
+        color: $content-light-primary;
+        font-size: 60px;
+        font-weight: 300;
+        line-height: normal;
+        letter-spacing: -1.8px;
+        text-transform: uppercase;
+    }
+}
+.aboutHome__line1{
+    height: 4.5rem;
+    width: 6px;
+    background: $yellow-primary;
+}
+.aboutHome__line2{
+    height: 5px;
+    width: 18rem;
+    background: $yellow-primary;
+}
+
+.aboutHome__button{//* Button 
+    margin: 16% 14% auto auto;
+    &:hover > .aboutHome__circle1{
+        transform: translate(-9rem, -4.5rem);
+    }
+    &:hover > .aboutHome__circle2{
+        transform: translate(3rem, 4.5rem);
+    }
+    &:hover > .aboutHome__circle3{
+        transform: translate(3rem, -5rem);
+    }
+    &:hover > .aboutHome__circle4{
+        transform: translate(2.5rem, -7rem);
+    }
+    &:hover > .aboutHome__button--texts{
+        transform: scale(1.1);
+    }
+    & > svg{
+        z-index: 10;
+    }
+}
+.aboutHome__button--texts{
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    background: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: ease .3s;
+    z-index: 10;
+}
+.aboutHome__button--text{
+    color: $content-dark-primary;
+    font-size: 20px;
+    font-weight: 300;
+    line-height: normal;
+}
+
+.aboutHome__circle{
+    position: absolute;
+    border-radius: 50%;
+    transition: ease .3s;
+    background: $yellow-primary;
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.aboutHome__circle1{
+    width: 50px;
+    height: 50px;
+}
+.aboutHome__circle2{
+    width: 40px;
+    height: 40px;
+}
+.aboutHome__circle3{
+    width: 40px;
+    height: 40px;
+    background: black;
+}
+.aboutHome__circle4{
+    width: 20px;
+    height: 20px;
+}
+.aboutHome___container--button{
+    position: absolute;
+    top: 25%;
+    right: 20%;
+    @media screen and (max-width: 768px){
+        top: 40%;
+        right: 0%;
+    }
+}

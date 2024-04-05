@@ -1,0 +1,102 @@
+.blogNotice{
+    padding: 130px 130px;
+    @media screen and (max-width:600px){
+        padding: 100px 32px;        
+    }
+}
+.blogNotice__container{
+    display: flex;
+    @media screen and (max-width:600px){
+        flex-direction: column;
+        gap: 80px;
+    }   
+}
+
+.blogNotice__notice{
+    width: 50%;
+    @media screen and (max-width:600px){
+        width: 100%;
+    }
+}
+.blogNotice__notice > :nth-child(1){
+    text-wrap:initial;
+}
+.blogNotice__notice > :nth-child(2){
+    margin-top: 10px;
+    font-size: 18px;
+}
+.blogNotice__notice > :nth-child(3){
+    margin-top: 20px;
+    width: 100%;
+    height: 367px;
+    border: 1px solid rgba(0,0,0,.1);
+    box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.05), 0px 2px 2px 0px rgba(0, 0, 0, 0.03), 0px 1px 0px 0px rgba(0, 0, 0, 0.03);
+    @media screen and (max-width: 600px){
+        height: 250px;
+    }
+}
+.blogNotice__notice > :nth-child(4){
+    margin-top: 10px;
+}   
+.blogNotice__icons{
+    margin-top: 36px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    & > :nth-child(-n+3){
+        stroke: black;
+    }
+    & > :nth-child(4){
+        fill: black;
+    }
+}
+.blogNotice__icons > *{
+    cursor: pointer;
+}
+
+//*Section
+.blogNotice__section{
+    margin: 0 0 0 auto;
+    justify-self: baseline;
+    display: grid;
+    gap: 25px;
+    position: relative;
+    & > p{
+        margin-bottom: 10px;
+        font-weight: 400;
+        position: relative;
+    }
+    & > p::before{
+        content: '';
+        width: 100%;
+        height: .5px;
+        position: absolute;
+        bottom: -3px;
+        background: $background-line;
+    }
+}
+.blogNotice__section--container{
+    cursor: pointer;
+    width: 368px;
+    height: 140px;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 10px;
+    transition: ease .3s;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.05), 0px 2px 2px 0px rgba(0, 0, 0, 0.03), 0px 1px 0px 0px rgba(0, 0, 0, 0.03);
+}
+.blogNotice__section--container:hover{
+
+}
+.blogNotice__content{
+    
+}
+.blogNotice__content > :nth-child(1){
+    font-size: 18px;
+}
+.blogNotice__content > :nth-child(2){
+    margin-top: 5px;
+    font-size: 16px;
+}

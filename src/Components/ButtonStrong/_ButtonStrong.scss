@@ -1,0 +1,29 @@
+.buttonStrong{
+    padding: 0.5em 2em;
+    position: relative;
+    overflow: hidden;
+    color: $content-dark-primary;
+    border: 1px solid white;
+    // border-radius: 100px;
+    transition: ease .5s;
+    z-index: 5;
+    &::before{
+        content: '';
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        bottom: -100%;
+        transition: ease .3s;
+        border-radius: 1px solid $yellow-secondary;
+        background: $yellow-primary;
+        z-index: -1;
+    }
+    &:hover::before{
+        transform: translateY(-100%);
+    }
+    &:hover{
+        color: $content-light-primary;
+        border: 1px solid black;
+    }
+}

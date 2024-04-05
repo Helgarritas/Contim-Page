@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+
+$yellow-primary: #F5CB1F;
+$yellow-secondary: #f9d649;
+$content-light-primary: rgba(0, 0, 0, 1);
+$content-light-secondary: rgba(0, 0, 0, .7);
+$content-light-terceary: rgba(0, 0, 0, 0.5);
+$content-dark-primary: rgba(255, 255, 255, 1);
+$content-dark-secondary: #ffffffb3;
+$content-dark-tercery: rgba(255, 255, 255, 0.5);
+$background-line: rgba(0,0,0,.3);
+*{   
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+    // background: #E8E8E8;
+    background: #F8F8F8;
+    // background: white;
+    color: black;
+}
+h1,h2,h3,h4{
+    text-wrap: balance;
+}
+p{
+    text-wrap: pretty;
+    font-size: 20px;
+    font-weight: 300;
+    line-height: normal;
+}
+li,a{
+    list-style: none;
+    text-decoration: none;
+    cursor: pointer;
+}
+a,button{
+    cursor: pointer;
+}
+//* Default Text
+h1{
+    font-size: 60px;
+    font-weight: 600;
+    line-height: 4.5rem;
+    letter-spacing: -0.1rem;
+    text-transform: uppercase;
+}
+h2{
+    font-size: 40px;
+    font-weight: 600;
+    letter-spacing: -1.6px;
+}
+a{
+    font-size: 20px;
+    font-weight: 300;
+    line-height: normal;
+}
+
+@import './scss/Icons/Icons';
+
+@import './scss/Home/Home';
+@import './scss/About/About';
+@import './scss/Proyect/Proyect';
+@import './scss/Solutions/Solutions';
+@import './scss/blog/blog';
+
+//* Components
+@import './Components/Barnav/barNav';
+@import './Components/Footer/Footer';
+@import './Components/ButtonStrong/ButtonStrong';
