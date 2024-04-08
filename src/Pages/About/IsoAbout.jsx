@@ -31,7 +31,7 @@ function IsoAbout(props) {
         <article className='isoAbout__container'>
           <div className='isoAbout__content'>
             <h2>Nuestra Certificación </h2>
-            <p>Contamos con un sistema  integrado de gestión, certificado por SGS para garantizar la calidad en nuestros procesos, así como la seguridad, medio ambiente y salud ocupacional de nuestros colaboradores en cada uno de nuestros proyectos</p>
+            <p>Contamos con un sistema integrado de gestión, certificado por SGS para garantizar la calidad en nuestros procesos, así como la seguridad, medio ambiente y salud ocupacional de nuestros colaboradores en cada uno de nuestros proyectos</p>
           </div>
           <div className='isoAbout__cards'>
             {

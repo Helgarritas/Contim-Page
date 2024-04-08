@@ -26,9 +26,8 @@ function ArticleBlog(props) {
               <img src={currentArticle.image} alt="" />
               <p>{currentArticle.text}</p>
               <div className='blogNotice__icons'>
-                {
-                  IconsMedia.map((obj,index)=>(
-                    <NavLink to={obj.link} target='_black' key={index}>
+                {IconsMedia.map((obj,index)=>(
+                    <NavLink  to={obj.link} target='_black' key={index}>
                       {obj.icon}
                     </NavLink> 
                 ))}

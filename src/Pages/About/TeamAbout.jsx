@@ -3,7 +3,6 @@ import { useState,useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 
 //* Components
-import user1 from '/src/assets/Users/use1.png';
 import user2 from '/src/assets/Users/user2.png';
 import IconsMedia from '../../Components/IconsMedia/IconsMedia';
 

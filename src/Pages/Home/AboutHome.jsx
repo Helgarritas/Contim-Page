@@ -8,8 +8,8 @@ export default function AboutHome() {
     "Percibimos cada proyecto como una oportunidad para demostrar que somos innovadores y eficientes"
 
   return (
-    <div className="min-h-screen px-[32px]  lg:px-[130px] py-12 relative">
-      <TextReveal body={text} className="relative  h-[200vh]  w-[100%]">
+    <div className="min-h-screen px-[32px]  lg:px-[130px]  relative z-10">
+      <TextReveal body={text} className="relative  h-[190vh]  w-[100%]">
         {(tokens) => (
           <div className="sticky left-0 top-0 flex h-1/2 items-center text-[60px] font-light leading-tight text-black uppercase ">
             {/* text */}

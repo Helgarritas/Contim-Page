@@ -43,7 +43,7 @@ function MachinesSolutions(props) {
                 ))}
               </div>
               {/* Etiqueta la descripcion del equipo */}
-              <div className='relative h-[60px] w-[50%] overflow-hidden mb-6'>
+              <div className='relative h-[60px] w-[100%] sm:w-[50%] overflow-hidden mb-6'>
                 {DataImageMachine.map((obj)=>(
                   <p
                     key={obj.id} 
@@ -59,7 +59,7 @@ function MachinesSolutions(props) {
           </div>
           <div className="projectsHome__indexs">
             {DataImageMachine.map((obj)=>(
-              <p key={obj.id} style={{background: Roll==obj.id?`#FFE600`:`transparent`}} className="projecytsHome__index" onClick={()=>changeProject(obj.id)}></p>
+              <p key={obj.id} style={{background: Roll==obj.id?`#F5CB1F`:`transparent`}} className="projecytsHome__index" onClick={()=>changeProject(obj.id)}></p>
             ))}
           </div>
         </article>

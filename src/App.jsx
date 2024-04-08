@@ -1,31 +1,43 @@
-import React from 'react';
-import './App.scss'
-import { Routes,Route } from 'react-router-dom';
+import React, { useState } from 'react';
+import './App.scss';
+import { Routes, Route, useNavigate } from 'react-router-dom';
 
 import BarNav from './Components/Barnav/BarNav';
 import Home from './Pages/Home/Home';
 import About from './Pages/About/About';
 import Proyect from './Pages/Proyects/Proyect';
-import Solutions from './Pages/Solutions/Solutions'; 
+import Solutions from './Pages/Solutions/Solutions';
 import Footer from './Components/Footer/Footer';
 import Blog from './Pages/Blog/Blog';
 import ScrollTo from './Components/ScrollTo/ScrollTo';
+import Loader from './Components/Loader/Loader';
 
 function App() {
+  const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
+
+  const changeLoading = () => {
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+    }, 2300); // Simulación de carga, reemplaza con tu lógica real de carga
+  };
+
   return (
     <>
-      <BarNav></BarNav>
-      <ScrollTo></ScrollTo>
+      <Loader loading={loading} /> {/* Pasar el estado de carga como una prop */}
+      <BarNav changeLoading={changeLoading} />
+      <ScrollTo />
       <Routes>
-        <Route path='/' element={<Home/>}></Route>
-        <Route path='/about' element={<About/>}></Route>
-        <Route path='/project' element={<Proyect/>}></Route>
-        <Route path='/solution' element={<Solutions/>}></Route>
-        <Route path='/blog/:articleId' element={<Blog />}></Route>
+        <Route path='/' element={<Home />} />
+        <Route path='/about' element={<About />} />
+        <Route path='/project' element={<Proyect />} />
+        <Route path='/solution' element={<Solutions />} />
+        <Route path='/blog/:articleId' element={<Blog />} />
       </Routes>
-      <Footer></Footer>
+      <Footer />
     </>
-  )
+  );
 }
 
-export default App
+export default App;

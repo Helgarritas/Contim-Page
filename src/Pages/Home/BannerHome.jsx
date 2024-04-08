@@ -6,22 +6,7 @@ import { NavLink } from 'react-router-dom';
 import ButtonStrong from '../../Components/ButtonStrong/ButtonStrong';
 
 function BannerHome(props) {
-  const backgroundBanner = useRef();
 
-  useEffect(()=>{
-    const backgroundBannerRoll = backgroundBanner.current;
-    const backgroundBannerHeight = backgroundBannerRoll.clientHeight/2.05;
-    console.log(backgroundBannerHeight)
-    window.addEventListener('scroll',()=>{
-      let windowTop = window.scrollY;
-      if(windowTop > backgroundBannerHeight){
-        backgroundBannerRoll.classList.add('opacityBackgroundBanner');
-      }else{
-        backgroundBannerRoll.classList.remove('opacityBackgroundBanner');
-      }
-    })
-  },[])
-  
   return (
     <>
       <section className='bannerHome'>
@@ -38,7 +23,7 @@ function BannerHome(props) {
             srcSet="/src/assets/background/Banner-Inicio-Movil.png" 
             media="(max-width: 768px)"
           />
-          <img ref={backgroundBanner} className='bannerhome__background' src="/src/assets/background/Banner-Inicio.jpg"/>
+          <img className='bannerhome__background' src="/src/assets/background/Banner-Inicio.jpg"/>
         </picture>
       </section>
     </>

@@ -1,0 +1,33 @@
+.nav__button{
+    width: 25px;/*25px*/
+    height: 25px;/*25px*/
+    position: relative;
+    background: transparent;
+    cursor: pointer;
+    z-index: 99;    
+}
+.sp{
+    background: white;
+    width: 100%;
+    height: 2px;
+    display: block;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: ease .3s;
+}
+.l1{
+    transform: translate(-50%, -7px);
+}
+.l3{
+    transform: translate(-50%, 5px);
+}
+.moveBtnlist .l1{
+    transform: translate(-50%, -50%)rotate(45deg)scale(0.8);
+}
+.moveBtnlist .l3{
+    transform: translate(-50%, -50%)rotate(-45deg)scale(0.8);
+}
+.moveBtnlist .l2{
+    width: 0;
+}

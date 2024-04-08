@@ -1,6 +1,5 @@
 import React from 'react'
-import PropTypes from 'prop-types'
-
+import { NavLink } from 'react-router-dom'
 function NoticeHome(props) {
   const dataNotice = [
     {id: 1, 
@@ -45,7 +44,7 @@ function NoticeHome(props) {
                     <p>{obj.date}</p>
                     <p>{obj.text}</p>
                   </div>
-                  <a href="" className='noticeHome__now'>Conocer</a>
+                  <NavLink to={`/blog/${obj.id}`} className='noticeHome__now'>Conocer</NavLink>
                 </div>
               ))
             }

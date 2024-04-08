@@ -69,6 +69,7 @@
     // transition: ease .3s;
     background-color: $yellow-primary;
     cursor: pointer;
+    z-index: 2;
     &:hover{
         // box-shadow: 1px 1px 20px rgb(0, 0, 0, 0.05);
         outline: .5px solid black;

@@ -3,6 +3,9 @@ import PropTypes from 'prop-types'
 import { useRef } from 'react';
 import { useEffect } from 'react';
 
+//* Images
+import bgBanner from "/src/assets/background/Banner-About.jpg";
+
 function BannerAbout(props) {
   const backgroundBanner = useRef();
 
@@ -27,7 +30,7 @@ function BannerAbout(props) {
           <p>Contmin establecida en 1998 con capital íntegramente peruano , enfocada en  impulsar el crecimiento de la  industria. </p>
         </article>
         <img 
-          src="/src/assets/background/Banner-About.jpg"
+          src={bgBanner}
           className='bannerAbout__background'
           ref={backgroundBanner}
         />

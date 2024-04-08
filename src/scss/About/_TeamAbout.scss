@@ -57,6 +57,7 @@
     row-gap: 60px;
     @media screen and (max-width: 768px){
         align-items:center;
+        justify-content: center;
     }
 }
 .teamoAbout__card{

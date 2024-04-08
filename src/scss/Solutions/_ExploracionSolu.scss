@@ -1,8 +1,12 @@
 .exploSolutions{
     padding: 0 130px;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     align-items: center;    
+    @media screen and (max-width: 768px){
+        padding: 60px 32px;
+        min-height: 100vh;
+    }
 }
 .exploSolutions__container{
     width: 100%;
@@ -13,6 +17,10 @@
 .exploSolutions__description{
     & > :nth-child(2){
         width: 50%;
+        @media screen and (max-width: 768px){
+            margin-top: 10px;
+            width: 100%;
+        }
     }
 }
 .exploSolutions__cards{
@@ -20,6 +28,10 @@
     justify-content: center;
     align-items: center;
     gap: 50px;
+    z-index: 1;
+    @media screen and (max-width: 768px){
+        flex-direction: column;
+    }
 }
 .exploSolutions__card{
     padding: 10px 10px;
@@ -29,9 +41,9 @@
     flex-direction: column;
     justify-content: center;
     gap: 10px;
-    transition: ease .3s;
     text-align: center;
     background-color: white;
+    cursor: pointer;
     @media screen and (max-width: 768px){
         max-width: 260px;
         max-height: 310px;

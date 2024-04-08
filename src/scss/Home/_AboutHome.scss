@@ -35,6 +35,7 @@
 
 .aboutHome__button{//* Button 
     margin: 16% 14% auto auto;
+    z-index: 5;
     &:hover > .aboutHome__circle1{
         transform: translate(-9rem, -4.5rem);
     }

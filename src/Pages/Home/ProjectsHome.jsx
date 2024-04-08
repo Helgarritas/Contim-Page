@@ -60,7 +60,7 @@ export default function ProjectsHome() {
             <p 
               key={obj.id} 
               className="projecytsHome__index" 
-              style={{background: Roll===obj.id?`#FFE600`:`transparent`}}
+              style={{background: Roll===obj.id?`#F5CB1F`:`transparent`}}
               onClick={()=>changeProject(obj.id)}>
             </p>
           ))}
