@@ -14,17 +14,17 @@ function SolutionsHome(props) {
     },
     {id:2,
       icon: <span className="material-symbols-outlined">hub</span>,
-      title: `Mineria Subterranea`,
+      title: `Mineria Open Pit`,
       text: `Usamos la mineria para ganar territorio en el sector desde hace muschos años de la mineria`
     },
     {id:3,
       icon: <span className="material-symbols-outlined">manufacturing</span>,
-      title: `Mineria Subterranea`,
+      title: `Planificación y Desarrollo`,
       text: `Usamos la mineria para ganar territorio en el sector desde hace muschos años de la mineria`
     },
     {id:4,
       icon: <span className="material-symbols-outlined">hive</span>,
-      title: `Mineria Subterranea`,
+      title: `Alquiler de Maquinaria`,
       text: `Usamos la mineria para ganar territorio en el sector desde hace muschos años de la mineria`
     },
   ]

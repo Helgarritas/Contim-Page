@@ -2,6 +2,8 @@ import React from 'react';
 import { useRef, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 
+//* Image
+import backgroundBannerH from "/src/assets/background/Banner-Inicio-Movil.png" ;
 //* Components
 import ButtonStrong from '../../Components/ButtonStrong/ButtonStrong';
 
@@ -20,7 +22,7 @@ function BannerHome(props) {
         <picture>
           <source 
             className='bannerhome__background'
-            srcSet="/src/assets/background/Banner-Inicio-Movil.png" 
+            src={backgroundBannerH}
             media="(max-width: 768px)"
           />
           <img className='bannerhome__background' src="/src/assets/background/Banner-Inicio.jpg"/>

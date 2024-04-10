@@ -1,6 +1,7 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
-function NoticeHome(props) {
+import { NavLink,useNavigate } from 'react-router-dom'
+function NoticeHome({changeLoading}) {
+  console.log(`esto en mi nuevo ser: ${changeLoading}`);
   const dataNotice = [
     {id: 1, 
       // image: `/src/assets/background/solution - subterraneo.png`,
@@ -28,6 +29,18 @@ function NoticeHome(props) {
     }
   ]
 
+  let navigate = useNavigate();
+  const tiempoRestante = 1000; 
+
+  const delayLink = (e, path) => {
+    e.preventDefault();
+    changeLoading(true)
+    setTimeout(() => {
+      navigate(path)
+    }, tiempoRestante);
+  };
+
+
   return (
     <>
       <section className='noticeHome'>
@@ -44,7 +57,7 @@ function NoticeHome(props) {
                     <p>{obj.date}</p>
                     <p>{obj.text}</p>
                   </div>
-                  <NavLink to={`/blog/${obj.id}`} className='noticeHome__now'>Conocer</NavLink>
+                  <NavLink to={`/blog/${obj.id}`} onClick={(e)=>delayLink(e,`/blog/${obj.id}`)} className='noticeHome__now'>Conocer</NavLink>
                 </div>
               ))
             }

@@ -1,6 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
+//* Image
+import image1 from "/src/assets/background/sub.png";
+import image2 from "/src/assets/background/sub.png";
+
+
 function ObrasSolutions(props) {
   return (
     <>
@@ -13,13 +18,13 @@ function ObrasSolutions(props) {
             <div className='mineriaSolutions__background--container'>
                 <img 
                     className='mineriaSolutions__background--img'
-                    src="/src/assets/background/sub.png" alt="" />
+                    src={image1} alt="" />
                 <p>TUNÉL BOLIVIA</p>
             </div>
             <div className='mineriaSolutions__background--container'>
                 <img 
                     className='mineriaSolutions__background--img'
-                    src="/src/assets/background/sub.png" alt="" />
+                    src={image2} alt="" />
                 <h3>CARRETERA CENTRAL</h3>
             </div>
         </article>

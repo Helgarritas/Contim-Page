@@ -8,19 +8,19 @@ function Loader({ loading }) {
         zIndex: loading ? '9999' : '-1'
       }}>
         
-        <div class="banter-loader" style={{
+        <div className="banter-loader" style={{
           opacity: loading ? '9999' : '-1',
 
         }}>       
-          <div class="banter-loader__box"></div>
-          <div class="banter-loader__box"></div>
-          <div class="banter-loader__box"></div>
-          <div class="banter-loader__box"></div>
-          <div class="banter-loader__box"></div>
-          <div class="banter-loader__box"></div>
-          <div class="banter-loader__box"></div>
-          <div class="banter-loader__box"></div>
-          <div class="banter-loader__box"></div>
+          <div className="banter-loader__box"></div>
+          <div className="banter-loader__box"></div>
+          <div className="banter-loader__box"></div>
+          <div className="banter-loader__box"></div>
+          <div className="banter-loader__box"></div>
+          <div className="banter-loader__box"></div>
+          <div className="banter-loader__box"></div>
+          <div className="banter-loader__box"></div>
+          <div className="banter-loader__box"></div>
         </div>
       </div>
 

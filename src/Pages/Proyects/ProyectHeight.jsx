@@ -2,35 +2,36 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 import ProyectHeightCard from './ProyectHeightCard/ProyectHeightCard'
-// Props
+
+import image1 from '/src/assets/background/bosque1.jpg';
 
 function ProyectHeight(props) {
 
   let dataProyectHeight = [
     {id:1,
       country: 'Perú',
-      // image: '/src/assets/backgrounds/aboutBAnner.jpg',
+      image: image1,
       title: 'UM Piedra Iman',
       description: 'La Paz Bolivia',
       text: 'My first iOS app is available on the AppStore. I literally didn’t know anything about SwiftUI (still not much) and in probably 4 weeks was able to recreate my android app for iOS. Highly recommend MengTo videos!',
       msnm: 1000},
     {id:2,
       country: 'Perú',
-      // image: '/src/assets/backgrounds/aboutBAnner.jpg',
+      image: image1,
       title: 'UM Piedra Iman',
       description: 'La Paz Bolivia',
       text: 'My first iOS app is available on the AppStore. I literally didn’t know anything about SwiftUI (still not much) and in probably 4 weeks was able to recreate my android app for iOS. Highly recommend MengTo videos!',
       msnm: 2000},
     {id:3,
       country: 'Perú',
-      // image: '/src/assets/backgrounds/aboutBAnner.jpg',
+      image: image1,
       title: 'UM Piedra Iman',
       description: 'La Paz Bolivia',
       text: 'My first iOS app is available on the AppStore. I literally didn’t know anything about SwiftUI (still not much) and in probably 4 weeks was able to recreate my android app for iOS. Highly recommend MengTo videos!',
       msnm: 3000},
     {id:4,
       country: 'Perú',
-      // image: '/src/assets/backgrounds/aboutBAnner.jpg',
+      image: image1,
       title: 'UM Piedra Iman',
       description: 'La Paz Bolivia',
       text: 'My first iOS app is available on the AppStore. I literally didn’t know anything about SwiftUI (still not much) and in probably 4 weeks was able to recreate my android app for iOS. Highly recommend MengTo videos!',

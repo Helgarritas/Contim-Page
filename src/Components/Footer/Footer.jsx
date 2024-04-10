@@ -1,11 +1,23 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
+import { NavLink,useNavigate } from 'react-router-dom'
 
 //* Components
+import dataDescripFooter from './Components/DataDescripFooter';
 import footerIcons from './FooterIcons';
 import IconsMedia from '../IconsMedia/IconsMedia';
 
-function Footer(props) {
+function Footer({changeLoading}) {
+  let navigate = useNavigate();
+  const tiempoRestante = 1000; 
+
+  const delayLink = (e, path) => {
+    e.preventDefault();
+    changeLoading(true)
+    setTimeout(() => {
+      navigate(path)
+    }, tiempoRestante);
+  };
+  
   return (
     <>
       <footer className='footer'>
@@ -29,10 +41,9 @@ function Footer(props) {
               ))}
             </div>
             <div className='footer__description'>
-              <NavLink to={`/about`}>Nosotros</NavLink>
-              <NavLink to={`/project`}>Proyectos</NavLink>
-              <NavLink to={`/solution`}>Soluciones</NavLink>
-              {/* <NavLink to={`/`}>Noticias</NavLink> */}
+              {dataDescripFooter.map((obj,index)=>(
+                <NavLink to={obj.link} key={index} onClick={(e)=>delayLink(e,`${obj.link}`)}>{obj.description}</NavLink>
+              ))}
             </div>
             <div className='footer__social'>
               {IconsMedia.map((obj,index)=>(

@@ -20,7 +20,7 @@ function App() {
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
-    }, 2300); // Simulación de carga, reemplaza con tu lógica real de carga
+    }, 1900); // Simulación de carga, reemplaza con tu lógica real de carga
   };
 
   return (
@@ -29,13 +29,13 @@ function App() {
       <BarNav changeLoading={changeLoading} />
       <ScrollTo />
       <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/about' element={<About />} />
+        <Route path='/' element={<Home changeLoading={changeLoading}/>} />
+        <Route path='/about' element={<About/>} />
         <Route path='/project' element={<Proyect />} />
         <Route path='/solution' element={<Solutions />} />
         <Route path='/blog/:articleId' element={<Blog />} />
       </Routes>
-      <Footer />
+      <Footer changeLoading={changeLoading}/>
     </>
   );
 }

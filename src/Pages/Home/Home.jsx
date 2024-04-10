@@ -9,7 +9,7 @@ import ClientsHome from './ClientsHome';
 import CommmentsHome from './CommmentsHome';
 import NoticeHome from './NoticeHome';
 
-function Home(props) {
+function Home({changeLoading}) {
   return (
     <>
       <BannerHome></BannerHome>
@@ -18,7 +18,7 @@ function Home(props) {
       <ProjectsHome></ProjectsHome>
       <ClientsHome></ClientsHome>
       <CommmentsHome></CommmentsHome>
-      <NoticeHome></NoticeHome>
+      <NoticeHome changeLoading={changeLoading}></NoticeHome>
     </>
   )
 }
