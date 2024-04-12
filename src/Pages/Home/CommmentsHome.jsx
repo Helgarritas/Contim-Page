@@ -27,6 +27,7 @@ function CommmentsHome(props) {
       work: 'Desingner'
     },
   ]
+
   const [multipleX, setMultipleX] = useState(0);
   const [translateInX, settranslateInX] = useState(0)
 
@@ -40,10 +41,8 @@ function CommmentsHome(props) {
     const barraSliderRoll = barraSlider.current;
     const widthBarraSlider = barraSliderRoll.clientWidth + 150;
     settranslateInX(widthBarraSlider * multipleX);
-    console.log()
   }, [multipleX]);
 
-  console.log(multipleX)
   return (
     <>
       <section className='commentsHome'>
@@ -74,13 +73,15 @@ function CommmentsHome(props) {
           {/* Solutions */}
           <div className='commentsHome__slider'>
             <div className='commentsHome__slider--container' style={{transform:`translateX(${translateInX}px)`}}>
-              {
-                dataComments.map((obj)=>(
+              {dataComments.map((obj)=>(
                   <div 
                     className='commentsHome__sliders' 
                     ref={barraSlider} 
                     key={obj.id}
-                    style={{ color: obj.id*-1 == multipleX ? 'rgba(0,0,0,1)' : 'rgba(0,0,0,.2)' }}
+                    style={{ 
+                      color: obj.id*-1 == multipleX ? 'rgba(0,0,0,1)' : 'rgba(0,0,0,.2)',
+                      scale: obj.id*-1 == multipleX ? '1' : '.8'
+                    }}
                     >
                     <p>{obj.comment}</p>
                     <div className='commentsHome__slider--user'>
@@ -88,8 +89,7 @@ function CommmentsHome(props) {
                       <p>{obj.work}</p>
                     </div>
                   </div>
-                ))
-              }
+                ))}
             </div>
           </div>
         </article>

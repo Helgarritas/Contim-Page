@@ -1,27 +1,32 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React, { useEffect, useState, useRef } from 'react';
 
-function ProyecHeightCard2({dataProyectHeight}) {
+function ProyectHeightCard2({filterDateHeight2}){
+
   return (
     <>
-        <div className='heightProyect__height'>
-            {dataProyectHeight.map((obj)=>(
-              <div className='heightProyect__card' style={{ margin: '0 0 0 auto' }}>
-                <img className='heightProyect__card--img' src={dataProyectHeight.image} alt="" />
-                <div className='heightProyect__card--content'>
-                    <p>{dataProyectHeight.id}</p>
-                    <p>iOS Developer</p>
-                    <p>My first iOS app is available on the AppStore. I literally didn’t know anything about SwiftUI (still not much) and in probably 4 weeks was able to recreate my android app for iOS. Highly recommend MengTo videos!</p>
-                </div>
-              </div>
-              <div className='heightProyect__msnm2'>
-                <p className='heightProyect__msnm--p'><span>1000</span><span>msnm</span></p>
-              </div>
-            ))
-            }
+      {filterDateHeight2.map(obj => (
+        <div className='heightProyect2__height' key={obj.id}> 
+          {/* Content */}
+          <div className='heightProyect__card'>
+            <div className='heightProyect2__img--container'>
+              <img className='heightProyect2__card--img' src={obj.image} alt=''/>
+            </div>
+            <div className='heightProyect2__card--content'>
+              <p>{obj.title}</p>
+              <p>{obj.description}</p>
+              <p>{obj.text}</p>
+            </div>
+          </div>
+          <div className='heightProyect2__msnm'>
+            <div className='heightProyect2__msnm--p'>
+              <p>{obj.msnm}</p>
+              <p>msnm</p>
+            </div>
+          </div>
         </div>
+      ))}
     </>
-  )
+  );
 }
 
-export default ProyecHeightCard2
+export default ProyectHeightCard2;

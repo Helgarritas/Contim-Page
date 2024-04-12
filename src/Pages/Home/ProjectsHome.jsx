@@ -1,13 +1,26 @@
 import { useEffect,useState } from "react"
-import { NavLink } from "react-router-dom";
+import { NavLink,useNavigate } from "react-router-dom";
 import DataImageProjects from "./Components/DataImageProjects";
 
-export default function ProjectsHome() {
+export default function ProjectsHome({changeLoading}) {
   const [Roll, setRoll] = useState(1)
 
   const changeProject = (index) => {
       setRoll(index)
   }
+
+  //* Function for Change Loader
+  let navigate = useNavigate();
+  const tiempoRestante = 1000; 
+
+  const delayLink = (e, path) => {
+    e.preventDefault();
+    changeLoading(true)
+    setTimeout(() => {
+      navigate(path)
+    }, tiempoRestante);
+  };
+
   return (
     <>
     <header className="projects relative ">
@@ -15,7 +28,13 @@ export default function ProjectsHome() {
         <h2 className="projects__title">NUESTROS PROYECTOS</h2>
         <div className="projectsHome__projets">
           <div className="projects__button--container">
-            <NavLink to={`/project`} className="projects__button">Ir</NavLink>
+            <NavLink 
+              to={`/project`} 
+              className="projects__button"
+              onClick={(e) => { delayLink(e, '/solution')}}
+            >
+            Ir
+            </NavLink>
           </div>
           {/* Etiqueta para Imagenes en el carrusel */}
           {DataImageProjects.map((obj)=>(
@@ -28,7 +47,8 @@ export default function ProjectsHome() {
                   height:Roll===obj.id?`100%`:`20px`,
                   borderRadius:Roll===obj.id?`0`:`50%`,
                   bottom:Roll===obj.id?`0`:`95px`,
-                  left:Roll===obj.id?`0`:`33px`}}
+                  left:Roll===obj.id?`0`:`33px`,
+                }}
             />
           ))}
           {/* Etiqueta para el contenido del carrusel */}

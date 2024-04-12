@@ -26,10 +26,10 @@ function App() {
   return (
     <>
       <Loader loading={loading} /> {/* Pasar el estado de carga como una prop */}
-      <BarNav changeLoading={changeLoading} />
+      <BarNav changeLoading={changeLoading}/>
       <ScrollTo />
       <Routes>
-        <Route path='/' element={<Home changeLoading={changeLoading}/>} />
+        <Route path='/' element={<Home changeLoading={changeLoading}/>}/>
         <Route path='/about' element={<About/>} />
         <Route path='/project' element={<Proyect />} />
         <Route path='/solution' element={<Solutions />} />

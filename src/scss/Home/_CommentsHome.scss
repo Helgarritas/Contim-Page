@@ -63,7 +63,8 @@
     flex-direction: column;
     gap: 60px;
     width: 25%;
-    & > p{
+    transition: scale .5s ease, color .3s ease;
+        & > p{
         font-size: 30px;
         font-weight: 400;
     }

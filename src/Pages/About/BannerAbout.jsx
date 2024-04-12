@@ -11,7 +11,7 @@ function BannerAbout(props) {
 
   useEffect(()=>{
     const backgroundBannerRoll = backgroundBanner.current;
-    const backgroundBannerHeight = backgroundBannerRoll.clientHeight/2;
+    const backgroundBannerHeight = backgroundBannerRoll.clientHeight*0.5;
     console.log(backgroundBannerHeight)
     window.addEventListener('scroll',()=>{
       let windowTop = window.scrollY;

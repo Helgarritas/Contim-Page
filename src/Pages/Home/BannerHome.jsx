@@ -7,7 +7,22 @@ import backgroundBannerH from "/src/assets/background/Banner-Inicio-Movil.png" ;
 //* Components
 import ButtonStrong from '../../Components/ButtonStrong/ButtonStrong';
 
-function BannerHome(props) {
+function BannerHome({changeLoading}) {
+  const backgroundBanner = useRef();
+
+  useEffect(()=>{
+    const backgroundBannerRoll = backgroundBanner.current;
+    const backgroundBannerHeight = backgroundBannerRoll.clientHeight*0.5;
+    console.log(backgroundBannerHeight)
+    window.addEventListener('scroll',()=>{
+      let windowTop = window.scrollY;
+      if(windowTop > backgroundBannerHeight){
+        backgroundBannerRoll.classList.add('opacityBackgroundBanner');
+      }else{
+        backgroundBannerRoll.classList.remove('opacityBackgroundBanner');
+      }
+    })
+  },[])
 
   return (
     <>
@@ -17,7 +32,7 @@ function BannerHome(props) {
             <h1>trabajo con <br /> grandes resultados</h1>
             <p className='bannerHome__text'>Somos una empresa minera con mas de 25 años de experiencia especializada en el sector minero.</p>    
           </div>
-          <ButtonStrong link={'about'} content={'Revisar'}></ButtonStrong>
+          <ButtonStrong changeLoading={changeLoading} link={'about'} content={'Revisar'}></ButtonStrong>
         </article>
         <picture>
           <source 
@@ -25,7 +40,7 @@ function BannerHome(props) {
             src={backgroundBannerH}
             media="(max-width: 768px)"
           />
-          <img className='bannerhome__background' src="/src/assets/background/Banner-Inicio.jpg"/>
+          <img ref={backgroundBanner} className='bannerhome__background' src="/src/assets/background/Banner-Inicio.jpg"/>
         </picture>
       </section>
     </>

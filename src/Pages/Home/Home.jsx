@@ -12,10 +12,10 @@ import NoticeHome from './NoticeHome';
 function Home({changeLoading}) {
   return (
     <>
-      <BannerHome></BannerHome>
-      <AboutHome></AboutHome>
+      <BannerHome changeLoading={changeLoading}></BannerHome>
+      <AboutHome changeLoading={changeLoading}></AboutHome>
       <SolutionsHome></SolutionsHome>
-      <ProjectsHome></ProjectsHome>
+      <ProjectsHome changeLoading={changeLoading}></ProjectsHome>
       <ClientsHome></ClientsHome>
       <CommmentsHome></CommmentsHome>
       <NoticeHome changeLoading={changeLoading}></NoticeHome>

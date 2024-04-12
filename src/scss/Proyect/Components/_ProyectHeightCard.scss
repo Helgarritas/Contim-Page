@@ -1,0 +1,58 @@
+.heightProyect__height{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @media screen and (max-width:460px) {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+.heightProyect__img--container{//* image card
+}
+.heightProyect__card--img{
+    width: 100%;
+    height: 100%;   
+}
+.heightProyect__card--content{//* Contentenido de la carta
+    padding: 20px 10px;
+    overflow-y: scroll; 
+    scrollbar-width: thin; 
+    scrollbar-color: rgba(155, 155, 155, 0.1) rgba(0, 0, 0, 0.05); 
+    & > :nth-child(1){
+        font-weight: 400;
+    }
+    & > :nth-child(2){
+
+    }
+    & > :nth-child(3){
+        margin-top: 10px;
+        color: $content-light-secondary;
+    }    
+}
+.heightProyect__msnm{//* altura msnm   
+    padding-right: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    width: 100%;
+    height: 100%;
+    @media screen and (max-width:460px) {
+        padding-right: 0;
+        justify-content: start;
+    }
+}
+.heightProyect__msnm--p{
+    display: flex;
+    flex-direction: column;
+    & > :nth-child(1){
+        padding: 4px 12px;
+        border: 2.5px solid $yellow-primary;
+        font-size: 25px;
+        font-weight: 600;
+    }
+    & > :nth-child(2){
+        text-align: center;
+        color: $content-light-secondary;
+    }
+    
+}

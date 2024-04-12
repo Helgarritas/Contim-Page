@@ -1,7 +1,6 @@
 import React from 'react'
 import { NavLink,useNavigate } from 'react-router-dom'
 function NoticeHome({changeLoading}) {
-  console.log(`esto en mi nuevo ser: ${changeLoading}`);
   const dataNotice = [
     {id: 1, 
       // image: `/src/assets/background/solution - subterraneo.png`,
@@ -29,6 +28,7 @@ function NoticeHome({changeLoading}) {
     }
   ]
 
+  //* Function for a Boolean Loeader
   let navigate = useNavigate();
   const tiempoRestante = 1000; 
 
@@ -39,7 +39,6 @@ function NoticeHome({changeLoading}) {
       navigate(path)
     }, tiempoRestante);
   };
-
 
   return (
     <>
@@ -57,7 +56,13 @@ function NoticeHome({changeLoading}) {
                     <p>{obj.date}</p>
                     <p>{obj.text}</p>
                   </div>
-                  <NavLink to={`/blog/${obj.id}`} onClick={(e)=>delayLink(e,`/blog/${obj.id}`)} className='noticeHome__now'>Conocer</NavLink>
+                  <NavLink 
+                    to={`/blog/${obj.id}`} 
+                    className='noticeHome__now'
+                    onClick={(e) => { delayLink(e, `/blog/${obj.id}`)}} 
+                  >
+                  Conocer
+                  </NavLink>
                 </div>
               ))
             }
