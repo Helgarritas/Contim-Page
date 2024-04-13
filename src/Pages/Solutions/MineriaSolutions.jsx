@@ -2,8 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 //* Components
-import subterranea from '/src/assets/background/Subterranea-Background.png';
-import openpit from '/src/assets/background/Openpit-Background.png';
+import subterranea  from '/src/assets/background/Subterranea-Background.png';
+import cieloabierto from '/src/assets/background/Openpit-Background.png';
 
 function MineriaSolutions(props) {
   const DataMineria = [
@@ -11,8 +11,8 @@ function MineriaSolutions(props) {
       image: subterranea,
       name: ['MINERIA','SUBTERRANEA']
     },
-    {id: 2,
-      image: openpit,
+    {id: 2, 
+      image:cieloabierto,
       name: ['MINERIA','CIELO ABIERTO']
     }
   ]
@@ -35,7 +35,7 @@ function MineriaSolutions(props) {
               <h2>EXTRACCIÓN</h2>
               <p>Ofrecemos un enfoque holístico gracias a nuestros estudios de Ingeniería Avanzada, donde nuestro equipo de expertos trabaja para idear soluciones a medida, adaptadas a los desafíos únicos de cada proyecto.</p>
           </div>
-        </article>
+        </article>s
       </section>
     </>
   )

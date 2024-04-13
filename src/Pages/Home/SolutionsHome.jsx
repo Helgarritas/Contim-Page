@@ -1,39 +1,44 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { useState } from 'react';
-import { useEffect } from 'react';
-import { useRef } from 'react';
+import { React,useEffect } from 'react';
+
+//Components
+import dataSolutionsHome from './Components/DataSolutionsHome';
 
 function SolutionsHome(props) {
+  // Funcion para animar las cards.
+  useEffect(() => {
+    const cards = document.querySelectorAll('.solutionsHome__card');
+    const title = document.querySelector('.solutionsHome__title');
 
-  let dataSolutionsHome = [
-    {id:1,
-      icon: <span className="material-symbols-outlined">browse</span>,
-      title: `Mineria Subterranea`,
-      text: `Usamos la mineria para ganar territorio en el sector desde hace muschos años de la mineria`
-    },
-    {id:2,
-      icon: <span className="material-symbols-outlined">hub</span>,
-      title: `Mineria Open Pit`,
-      text: `Usamos la mineria para ganar territorio en el sector desde hace muschos años de la mineria`
-    },
-    {id:3,
-      icon: <span className="material-symbols-outlined">manufacturing</span>,
-      title: `Planificación y Desarrollo`,
-      text: `Usamos la mineria para ganar territorio en el sector desde hace muschos años de la mineria`
-    },
-    {id:4,
-      icon: <span className="material-symbols-outlined">hive</span>,
-      title: `Alquiler de Maquinaria`,
-      text: `Usamos la mineria para ganar territorio en el sector desde hace muschos años de la mineria`
-    },
-  ]
+    const handleScroll = () => {
+      const windowHeight = window.innerHeight * 0.7;
+      
+      cards.forEach((element,index)=>{
+        const cardsTop = element.getBoundingClientRect().top; 
+
+        if (cardsTop <= windowHeight && !element.classList.contains('solutionsHome__animation')) {
+          element.classList.add('solutionsHome__animation');
+        }   
+      })
+
+      if(title.getBoundingClientRect().top <= windowHeight){
+        title.classList.add('solutionsHome__title--animation');
+      }
+    };
+  
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); 
+  
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
     <>
       <section className='solutionsHome'>
         <article className='solutionsHome__container'>
           {/* Título de la sección */}
-          <div className='solutionsHome__description'>
+          <div className='solutionsHome__title'>
             <h2 className=''>Nuestras Especializaciones</h2>
           </div>
           {/* Cards para soluciones */}
@@ -56,6 +61,5 @@ function SolutionsHome(props) {
     </>
   )
 }
-
 
 export default SolutionsHome;

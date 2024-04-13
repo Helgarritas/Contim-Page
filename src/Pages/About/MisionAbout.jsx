@@ -12,7 +12,7 @@ function MisionAbout(props) {
     <>
       <section className='misionAbout'>
         <article className='misionAbout__container'>
-          <h1 className='misionAbout__title'>Nuestro Propósito</h1>
+          <h2 className='misionAbout__title'>¿Por qué elegirnos?</h2>
           <div className='misionAbout__contents'>
             <div className='misionAbout__content'>
               <h2>Misión</h2>

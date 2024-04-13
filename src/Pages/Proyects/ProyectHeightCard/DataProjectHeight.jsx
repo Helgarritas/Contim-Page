@@ -1,6 +1,6 @@
 import image1 from '/src/assets/background/bosque1.jpg';
 
-let filterDateHeight1 = [
+let dataProyectHeight = [
   {id:1,
     country: 'Perú',
     image: image1,

@@ -1,61 +1,33 @@
 import React, { useEffect, useState, useRef } from 'react';
 
 function ProyectHeightCard({ filterDateHeight1 }) {
-  const [date, setDate] = useState([]);
-  const [updatedIndexes, setUpdatedIndexes] = useState([]);
-  const [lastThousandMultiple, setLastThousandMultiple] = useState([]);
-  const heightsRefs = useRef([]);
 
+  //* Funcion para animar las cards.
   useEffect(() => {
-    setDate(filterDateHeight1);
-
-    function heightScroll() {
-      const heightRefsRoll = heightsRefs.current;
-
-      heightRefsRoll.forEach((ref, index) => {
-        const elementTop = ref.getBoundingClientRect().bottom;
-        const windowHeight = window.innerHeight;
-
-        if (elementTop < windowHeight && !updatedIndexes.includes(index)) {
-          setUpdatedIndexes(prevIndexes => [...prevIndexes, index]);
-          let newData = [...date];
-          const currentMultiple = lastThousandMultiple[index] || 0;
-          const targetMultiple = Math.ceil(newData[index].msnm / 1000);
-
-          if (targetMultiple > currentMultiple) {
-            setLastThousandMultiple(prevMultiples => ({
-              ...prevMultiples,
-              [index]: targetMultiple,
-            }));
-
-            // Usamos la función de actualización del estado para garantizar que el estado se actualice de manera sincrónica
-            setDate(prevDate => {
-              const updatedData = [...prevDate];
-              const interval = setInterval(() => {
-                if (updatedData[index].msnm < targetMultiple * 1000) {
-                  updatedData[index].msnm += 2;
-                  setDate([...updatedData]);
-                } else {
-                  clearInterval(interval);
-                }
-              }, 1);
-              return updatedData;
-            });
-          }
-        }
+    const handleScroll = () => {
+      const cards = document.querySelectorAll('.heightProyect__card');
+  
+      cards.forEach((card) => {
+        const windowHeight = window.innerHeight * 0.7;
+        const cardTop = card.getBoundingClientRect().top;
+  
+        if (cardTop <= windowHeight && !card.classList.contains('heightProyect__card--animation')) {
+          card.classList.add('heightProyect__card--animation');
+        }   
       });
-    }
-
-    window.addEventListener('scroll', heightScroll);
-
-    return () => {
-      window.removeEventListener('scroll', heightScroll);
     };
-  }, [date, filterDateHeight1, updatedIndexes, lastThousandMultiple]);
+  
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); 
+  
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   return (
     <>
-      {date.map((obj, index) => (
+      {filterDateHeight1.map((obj, index) => (
         <div className='heightProyect__height' key={obj.id}>
           <div className='heightProyect__card'>
             <div className='heightProyect__img--container'>
@@ -68,7 +40,7 @@ function ProyectHeightCard({ filterDateHeight1 }) {
             </div>
           </div>
           <div className='heightProyect__msnm'>
-            <div className='heightProyect__msnm--p' ref={ref => heightsRefs.current[index] = ref}>
+            <div className='heightProyect__msnm--p'>
               <p>{obj.msnm}</p>
               <p>msnm</p>
             </div>

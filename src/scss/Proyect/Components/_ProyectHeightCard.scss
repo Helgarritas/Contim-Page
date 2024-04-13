@@ -7,13 +7,12 @@
         gap: 20px;
     }
 }
-.heightProyect__img--container{//* image card
-}
 .heightProyect__card--img{
     width: 100%;
     height: 100%;   
 }
-.heightProyect__card--content{//* Contentenido de la carta
+//* Contentenido de la carta
+.heightProyect__card--content{
     padding: 20px 10px;
     overflow-y: scroll; 
     scrollbar-width: thin; 
@@ -21,15 +20,13 @@
     & > :nth-child(1){
         font-weight: 400;
     }
-    & > :nth-child(2){
-
-    }
     & > :nth-child(3){
         margin-top: 10px;
         color: $content-light-secondary;
     }    
 }
-.heightProyect__msnm{//* altura msnm   
+//* Content of height 
+.heightProyect__msnm{
     padding-right: 5rem;
     display: flex;
     align-items: center;
@@ -55,4 +52,9 @@
         color: $content-light-secondary;
     }
     
+}
+//* Class for animations.
+.heightProyect__card--animation{
+    opacity: 1;
+    transform: translateX(0%);
 }
