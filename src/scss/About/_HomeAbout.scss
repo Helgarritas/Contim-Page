@@ -2,7 +2,7 @@
     padding: 0 130px;
     height: 100vh;
     position: relative;
-    overflow: hidden;
+    // overflow: hidden;
     display: flex;
     align-items: center;
     @media screen and (max-width: 768px){
@@ -22,12 +22,19 @@
     }
     & > p{
         width: 26rem;
+        @media screen and (max-width: 768px){
+            width: 100%;
+        }
     }
 }
 .bannerAbout__background{
     width: 100%;
     position: absolute;
-    top: -8rem;
+    top: 0;
     left: 0;
     transition: ease .3s;
+    mask-image: linear-gradient(
+        black 80%,
+        transparent
+    );
 }

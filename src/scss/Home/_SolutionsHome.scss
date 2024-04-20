@@ -11,34 +11,22 @@
 }
 .solutionsHome__container{
     width: 100%;
-    display: flex;
-    flex-direction: column;
+    display: grid;
     gap: 70px;
     @media screen and (max-width: 768px){
-        align-items: center;
+        justify-content: center;        
         gap: 60px;
     }
 }
-//* content title
+//* Title
 .solutionsHome__title{
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-    transition: ease .6s;
-    transform: translateX(-20%);
-    opacity: 0;
-    & > h2{
-        font-size: 50px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: normal;
-    }
+    font-size: 45px;
 }
 .solutionsHome__title--animation{
     transform: translateX(0%);
     opacity: 1;
 }
-//* Cards conteiner
+//* Card
 .solutionsHome__cards{
     display: flex;
     justify-content: center;
@@ -51,15 +39,12 @@
 }
 .solutionsHome__card{
     padding: 10px 10px;
-    max-width: 250px;
-    min-height: 300px;
+    max-width: 260px;
+    max-height: 311.8px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 10px;
-    transition: ease .6s;
-    opacity: 0;
-    transform: translateY(25%);
     cursor: pointer;
     @media screen and (max-width: 768px){
         max-width: 260px;
@@ -71,16 +56,15 @@
     &:hover .solutionsHome__more{
         transform: rotate(90deg);
     }
-}
-.solutionsHome__animation{
-    opacity: 1;
-    transform: translateY(0%);
+    &:hover .solutionsHome__button{
+        height: 27px;
+        opacity: 1;
+    }
 }
 .soutionsHome__content{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: grid;
     gap: 10px;
+    text-align: center;
     & > :nth-child(1){
         font-size: 25px;
     }
@@ -90,13 +74,26 @@
         line-height: normal;
     }
     & > :nth-child(3){
-        width: 50px;
+        text-align: center;
+    }
+    & > :nth-child(4){
+        font-size: 18px;
+        font-weight: 400;
+    }
+    & > :nth-child(5){
+        scale:1.5;
+        transition: ease .3s;
     }
 }
-.solutionsHome__textOpacity{
-    text-align: center;
-}
-.solutionsHome__more{
-    font-size: 30px;
+
+.solutionsHome__button{
+    height: 0;
+    opacity: 0;
+    position: relative;
     transition: ease .3s;
+    &::before{
+        content: '';
+        position: absolute;
+        width: 0%;
+    }
 }

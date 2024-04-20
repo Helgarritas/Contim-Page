@@ -1,62 +1,61 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React,{useEffect} from 'react';
 
-// Components
-import CardExploSol from './Components/CardExploSol'
 // Image
-import image from '/src/assets/background/Openpit-Background.png';
+// import exploración1 from '/src/assets/Users/Exploracionn.png';
+// import exploración2 from '/src/assets/Users/Exploración2.png';
+// import exploración3 from '/src/assets/Users/Mask group.png';
+
+import exploración1 from '/src/assets/Users/1a.png';
+import exploración2 from '/src/assets/Users/2a.png';
+import exploración3 from '/src/assets/Users/3a.png';
 
 
 function ExploracionSolu(props) {
 
   let dataSolutionsSol = [
     {id:1,
-      image: image,   
+      image: exploración1,   
       title: `Cateo`,
       text: `Usamos la mineria para ganar territorio en el sector desde hace muschos años de la mineria`
     },
     {id:2,
-      image: image, 
+      image: exploración2, 
       title: `Prospección`,
       text: `Usamos la mineria para ganar territorio en el sector desde hace muschos años de la mineria`
     },
     {id:3,
-      image: image, 
+      image: exploración3, 
       title: `Exploración`,
       text: `Usamos la mineria para ganar territorio en el sector desde hace muschos años de la mineria`
     },
   ]
+
   return (
     <>
       <section className='exploSolutions'>
         <article className='exploSolutions__container'>
           {/* Título de la sección */}
-          <div className='exploSolutions__description'>
-            <h2>EXPLORACIÓN  DE YACIMIENTOS</h2>
+          <div className='exploSolutions__description solutionHome__animation--card'>
+            <h2>Exploración de Yacimientos</h2>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas aliquam quisquam numquam optio, accusamus odio?</p>
           </div>
           {/* Cards para soluciones */}
           <div className='exploSolutions__cards'>
-            <CardExploSol image={dataSolutionsSol[0].image} title={dataSolutionsSol[0].title} text={dataSolutionsSol[0].text}></CardExploSol>
-            <div className='exploSolution__circle'>
-              <p></p>
-              <p></p>
-              <p></p>
-            </div>
-            <CardExploSol image={dataSolutionsSol[1].image} title={dataSolutionsSol[1].title} text={dataSolutionsSol[1].text}></CardExploSol>
-            <div className='exploSolution__circle'>
-              <p></p>
-              <p></p>
-              <p></p>
-            </div>
-            <CardExploSol image={dataSolutionsSol[2].image} title={dataSolutionsSol[2].title} text={dataSolutionsSol[2].text}></CardExploSol>
+            {dataSolutionsSol.map((obj)=>(
+              <div className='exploSolutions__card solutionHome__animation--card'>
+                <img className='exploSolutions__card--img' src={obj.image} alt="" />
+                <div className='exploSolutions__content'>
+                  <p>{obj.title}</p>
+                  <p className='exploSolutions__content--text'>{obj.text}</p>
+                  <p className='exploSolutions__more'>+</p>
+                </div>
+              </div>
+            ))}
           </div>
         </article>
       </section>
     </>
   )
 }
-
-ExploracionSolu.propTypes = {}
 
 export default ExploracionSolu;

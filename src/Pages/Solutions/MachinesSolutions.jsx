@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom'
-import { React,useState } from 'react'
+import React,{useEffect,useState} from 'react';
 
 //* Components
 import DataImageMachine from './Components/DataImageMachine';
@@ -15,11 +15,11 @@ function MachinesSolutions(props) {
     <>
       <section className='machinesSolutions'>
         <article className='machinesSolutions__container'>
-          <div className='machinesSolutions__title'>
-            <h2>ALQUILER DE MAQUINARIA</h2>
+          <div className='machinesSolutions__title solutionHome__animation--card'>
+            <h2>Alquiler de Maquinaria</h2>
             <p>Proporcionamos una amplia gama de maquinaria especializada de marcas líderes. Desde equipos de carga y transporte hasta herramientas de excavación y manipulación de materiales, nuestra flota está lista para enfrentar los desafíos más exigentes en cualquier proyecto minero.</p>
           </div>
-          <div className="projectsHome__projets">
+          <div className="projectsHome__projets solutionHome__animation--card">
             {/* Etiqueta para Imagenes */}
             {DataImageMachine.map((obj)=>(
               <img 

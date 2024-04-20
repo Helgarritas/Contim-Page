@@ -53,7 +53,7 @@ h1{
 }
 h2{
     font-size: 40px;
-    font-weight: 600;
+    font-weight: 500;
     letter-spacing: -1.6px;
 }
 a{
@@ -77,3 +77,13 @@ a{
 @import './Components/ButtonList/ButtonList';
 @import './Components/Loader/Loader';
 
+//* Animations
+.solutionHome__animation--card{
+    opacity: 0;
+    transform: translateY(25%);
+    transition: ease .6s;
+}
+.solutionsHome__animation{
+    opacity: 1;
+    transform: translateY(0%);
+}

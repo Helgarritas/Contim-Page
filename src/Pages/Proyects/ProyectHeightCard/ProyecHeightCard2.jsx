@@ -5,7 +5,7 @@ function ProyectHeightCard2({filterDateHeight2}){
   return (
     <>
       {filterDateHeight2.map(obj => (
-        <div className='heightProyect2__height' key={obj.id}> 
+        <div className='heightProyect2__height solutionHome__animation--card' key={obj.id}> 
           {/* Content */}
           <div className='heightProyect__card'>
             <div className='heightProyect2__img--container'>

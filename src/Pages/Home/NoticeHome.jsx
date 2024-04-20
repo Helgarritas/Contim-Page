@@ -1,27 +1,29 @@
-import React from 'react'
+import React,{useContext} from 'react'
 import { NavLink,useNavigate } from 'react-router-dom'
-function NoticeHome({changeLoading}) {
+
+// Components
+import BooleanLoading from '../BooleanLoading';
+
+function NoticeHome() {
+  let mycontext = useContext(BooleanLoading);
+
   const dataNotice = [
     {id: 1, 
-      // image: `/src/assets/background/solution - subterraneo.png`,
       footnote: `Contmin inicia Proyectos en Bolivia`,
       date: `Perú - 20/02/2023`,
       text: `En esfuerzo por expandirnos decidimos tomar contratos en el extranjero`
     },
     {id: 2, 
-      // image: `/src/assets/background/solution - subterraneo.png`,
       footnote: `Contmin inicia Proyectos en Bolivia`,
       date: `Perú - 20/02/2023`,
       text: `En esfuerzo por expandirnos decidimos tomar contratos en el extranjero`
     },
     {id: 3, 
-      // image: `/src/assets/background/solution - subterraneo.png`,
       footnote: `Contmin inicia Proyectos en Bolivia`,
       date: `Perú - 20/02/2023`,
       text: `En esfuerzo por expandirnos decidimos tomar contratos en el extranjero`
     },
     {id: 4, 
-      // image: `/src/assets/background/solution - subterraneo.png`,
       footnote: `Contmin inicia Proyectos en Bolivia`,
       date: `Perú - 20/02/2023`,
       text: `En esfuerzo por expandirnos decidimos tomar contratos en el extranjero`
@@ -34,7 +36,7 @@ function NoticeHome({changeLoading}) {
 
   const delayLink = (e, path) => {
     e.preventDefault();
-    changeLoading(true)
+    mycontext(true)
     setTimeout(() => {
       navigate(path)
     }, tiempoRestante);
@@ -44,28 +46,24 @@ function NoticeHome({changeLoading}) {
     <>
       <section className='noticeHome'>
         <article className='noticeHome__container'>
-          <div className='noticeHome__title'>
-            <h2>Conoce Nuestro Blog</h2>
-          </div>
+          <h2>Conoce Nuestro Blog</h2>
           <div className='noticeHome__cards'>
-            {
-              dataNotice.map((obj)=>(
-                <div className='noticeHome__card' key={obj.id}>
-                  <div className='noticeHome__card--content'>
-                    <p>{obj.footnote}</p>
-                    <p>{obj.date}</p>
-                    <p>{obj.text}</p>
-                  </div>
-                  <NavLink 
-                    to={`/blog/${obj.id}`} 
-                    className='noticeHome__now'
-                    onClick={(e) => { delayLink(e, `/blog/${obj.id}`)}} 
-                  >
-                  Conocer
-                  </NavLink>
+            {dataNotice.map((obj)=>(
+              <div className='noticeHome__card' key={obj.id}>
+                <div className='noticeHome__card--content'>
+                  <p>{obj.footnote}</p>
+                  <p>{obj.date}</p>
+                  <p>{obj.text}</p>
                 </div>
-              ))
-            }
+                <NavLink 
+                  to={`/blog/${obj.id}`} 
+                  className='noticeHome__link'
+                  onClick={(e) => { delayLink(e, `/blog/${obj.id}`)}} 
+                >
+                Saber más
+                </NavLink>
+              </div>
+            ))}
           </div>
         </article>
       </section>

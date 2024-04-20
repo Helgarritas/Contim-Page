@@ -8,12 +8,12 @@ import IconsMedia from '../../Components/IconsMedia/IconsMedia';
 import DataContentBlog from './Components/DataContentBlog';
 
 function ArticleBlog(props) { 
-  //* Parametro search router id. 
+  // Parametro search router id. 
   let { articleId } = useParams();
   console.log(`tetas:  ${articleId}`)
-  //* Filtrar el articulo de portada.
+  // Filtrar el articulo de portada.
   let currentArticle = DataContentBlog.find(article => article.id === parseInt(articleId));
-  //* Filtrar los articulos de secciones.
+  // Filtrar los articulos de secciones.
   let filterSectionNotice = DataContentBlog.filter(obj => obj.id !== parseInt(articleId)) 
 
 

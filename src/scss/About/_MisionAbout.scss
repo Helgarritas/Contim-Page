@@ -1,6 +1,5 @@
 .misionAbout{
-    padding: 0 130px;
-    min-height: 80dvh;
+    padding: 20px 130px 100px 130px;
     display: flex;
     align-items: center;
     @media screen and (max-width: 768px){
@@ -10,25 +9,16 @@
 .misionAbout__container{
     display: flex;
     flex-direction: column;
-    gap: 80px;
+    gap: 60px;
     position: relative;
-    
+  
 }
 .misionAbout__title{
-    align-self: baseline;
-    font-size: 50px;
-    font-weight: 400;
+    text-align: center;
+    font-weight: 500;
     line-height: normal;
     letter-spacing: -1.05px;
     position: relative;
-    &::before{
-        content: '';
-        height: 4px;
-        width: 100%;
-        position: absolute;
-        bottom: -5px;
-        background: $yellow-primary;
-    }
 }
 .misionAbout__contents{
     display: flex;
@@ -39,38 +29,45 @@
 }
 .misionAbout__content{
     width: 50%;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+    height: 320px;
+    padding: 20px 40px;
+    align-content: center;
+    position: relative;
+    color: white;
+    text-align: center;
+    overflow: hidden;
+    cursor: pointer;
     @media screen and (max-width: 768px){
         width: 100%;
     }
+    &::before{
+        content: '';
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        background: rgba(0,0,0,.4);
+        z-index: -1;
+    }
+    & > img{
+        width: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        transition: ease .4s;
+        z-index: -2;
+    }
+    &:hover > img{
+        transform: scale(1.2);
+    }
     & > h2{
-        font-size: 30px;
+        font-size: 25px;
         font-weight: 400;
+        z-index: 1;
     }
     & > p{
-        font-size: 25px;
+        line-height: normal;    
     }
-
 }
 
-.misionAbout__cirlcle{
-    position: absolute;
-    border-radius: 50%;
-    z-index: -1;
-}
-.misionAbout__circle1{
-    top: 20%;
-    right: 5%;
-    width: 70px;
-    height: 70px;
-    background: $yellow-primary;
-}
-.misionAbout__circle1-1{
-    top: 35%;
-    right: 0;
-    width: 45px;
-    height: 45px;
-    background: $yellow-primary;
-}

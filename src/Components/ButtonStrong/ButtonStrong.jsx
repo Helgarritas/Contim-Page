@@ -1,13 +1,19 @@
-import React from 'react'
+import React,{useContext} from 'react'
 import { NavLink,useNavigate } from 'react-router-dom';
 
-function ButtonStrong({link,content,changeLoading}) {
+// Components
+import BooleanLoading from '../../Pages/BooleanLoading';
+
+function ButtonStrong({link,content}) {
+
+  let myContext = useContext(BooleanLoading)
+
   let navigate = useNavigate();
   const tiempoRestante = 1000; 
 
   const delayLink = (e, path) => {
     e.preventDefault();
-    changeLoading(true)
+    myContext(true)
     setTimeout(() => {
       navigate(path)
     }, tiempoRestante);

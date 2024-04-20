@@ -1,5 +1,4 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React,{useEffect} from 'react';
 
 //* Components
 import subterranea  from '/src/assets/background/Subterranea-Background.png';
@@ -19,20 +18,18 @@ function MineriaSolutions(props) {
 
   return (
     <>  
-      <section className='mineriaSolutions  relative'>
-        <p></p>
-        <p></p>
+      <section className='mineriaSolutions relative'>
         <article className='mineriaSolutions__container'>
           {DataMineria.map((obj)=>(
-            <div className='mineriaSolutions__background--container' key={obj.id}>
+            <div className='mineriaSolutions__background--container solutionHome__animation--card' key={obj.id}>
               <img 
                   className='mineriaSolutions__background--img'
                   src={obj.image}/>
               <p>{obj.name[0]} <br/> {obj.name[1]}</p>
             </div>
           ))}
-          <div className='mineriaSolutions__content'>
-              <h2>EXTRACCIÓN</h2>
+          <div className='mineriaSolutions__content solutionHome__animation--card'>
+              <h2>Extracción</h2>
               <p>Ofrecemos un enfoque holístico gracias a nuestros estudios de Ingeniería Avanzada, donde nuestro equipo de expertos trabaja para idear soluciones a medida, adaptadas a los desafíos únicos de cada proyecto.</p>
           </div>
         </article>s

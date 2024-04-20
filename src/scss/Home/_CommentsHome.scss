@@ -1,6 +1,5 @@
 .commentsHome{
-    min-height: 100dvh;
-    padding: 60px 130px 180px 130px;
+    padding: 60px 130px;
     display: flex;
     align-items: center;
     overflow: hidden;
@@ -23,18 +22,12 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
-.commentsHome__description{
-    & > h2{
-    }
-}
+//* Buttons
 .commentsHome__buttons{
-    padding-bottom: 1rem;
-    align-self: flex-end;
-    margin-left: auto;
     display: flex;
     gap: 30px;
-    border-bottom: 3px solid $yellow-primary;
     & > button{
         width: 60px;
         height: 60px;
@@ -48,7 +41,8 @@
         z-index: 5;
     }
 }
-.commentsHome__slider{//* carrusel
+//* Slider
+.commentsHome__slider{
     width: 60vw;
 }
 .commentsHome__slider--container{
@@ -81,30 +75,6 @@
         width: 980px;
         font-size: 25px;
     }
-    & > :nth-child(2){
-    }
+
 }
 
-.commentsHome__circle{//* Circles
-    position: absolute;
-    background: $yellow-primary;
-    border-radius: 50%;
-}
-.commentsHome__circleS{
-    width: 80px;
-    height: 80px;
-    top: 40%;
-    left: 0;
-}
-.commentsHome__circleM{
-    width: 60px;
-    height: 60px;
-    bottom: -3rem;
-    left: 30%;
-}
-.commentsHome__circleX{
-    width: 40px;
-    height: 40px;
-    bottom: -5rem;
-    left: 20%;
-}

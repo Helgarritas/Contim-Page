@@ -1,21 +1,25 @@
-import { useEffect,useState } from "react"
+import { useContext,useEffect,useState } from "react"
 import { NavLink,useNavigate } from "react-router-dom";
-import DataImageProjects from "./Components/DataImageProjects";
 
-export default function ProjectsHome({changeLoading}) {
+// Components
+import DataProjecetHome from "./Components/DataProjectHome";
+import BooleanLoading from "../BooleanLoading";
+export default function ProjectsHome() {
+  let mycontext = useContext(BooleanLoading)
+
   const [Roll, setRoll] = useState(1)
 
   const changeProject = (index) => {
       setRoll(index)
   }
 
-  //* Function for Change Loader
-  let navigate = useNavigate();
+  // Function for Change Loader
+  const navigate = useNavigate();
   const tiempoRestante = 1000; 
 
   const delayLink = (e, path) => {
     e.preventDefault();
-    changeLoading(true)
+    mycontext(true)
     setTimeout(() => {
       navigate(path)
     }, tiempoRestante);
@@ -37,7 +41,7 @@ export default function ProjectsHome({changeLoading}) {
             </NavLink>
           </div>
           {/* Etiqueta para Imagenes en el carrusel */}
-          {DataImageProjects.map((obj)=>(
+          {DataProjecetHome.map((obj)=>(
             <img 
                 key={obj.id}
                 src={obj.image}
@@ -55,19 +59,19 @@ export default function ProjectsHome({changeLoading}) {
           <div className="projectHome__descriptions">
             {/* Etiqueta para el nombre del proyecto */}
             <div className="projectHome__project--name">
-              {DataImageProjects.map((obj)=>(
+              {DataProjecetHome.map((obj)=>(
                 <h2 key={obj.id} style={{transform: Roll===obj.id?`translateY(0%)`:`translateY(110%)`}}>{obj.project}</h2>
               ))}
             </div>
             {/* Etiqueta para la funcion que realizo la empresa en el proyecto */}
             <div className="projectsHome__description">
               <p>
-                {DataImageProjects.map((obj)=>(
+                {DataProjecetHome.map((obj)=>(
                   <span key={obj.id} style={{transform: Roll===obj.id?`translate(-50%,0%)`:`translate(-50%,120%)`}}>{obj.colaboration[0]}</span>
                 ))}
               </p>
               <p>
-                {DataImageProjects.map((obj)=>(
+                {DataProjecetHome.map((obj)=>(
                   <span key={obj.id} style={{transform: Roll===obj.id?`translate(-50%,0%)`:`translate(-50%,120%)`}}>{obj.colaboration[1]}</span>
                 ))}
               </p>
@@ -76,7 +80,7 @@ export default function ProjectsHome({changeLoading}) {
         </div>
         {/* Botones inferiores para el carrusel */}
         <div className="projectsHome__indexs">
-          {DataImageProjects.map((obj)=>(
+          {DataProjecetHome.map((obj)=>(
             <p 
               key={obj.id} 
               className="projecytsHome__index" 

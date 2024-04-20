@@ -7,7 +7,7 @@ import image6 from  "/src/assets/background/bosque1.jpg";
 import image7 from  "/src/assets/background/bosque1.jpg";
 
 
-const DataImageProjects = [
+const DataProjecetHome = [
     {
         id: 1,
         image: image1,
@@ -58,4 +58,4 @@ const DataImageProjects = [
     },
 ]
 
-export default DataImageProjects;
+export default DataProjecetHome;

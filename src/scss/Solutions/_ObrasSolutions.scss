@@ -35,7 +35,7 @@
         color: $content-dark-primary;
         color: #FFF;
         font-size: 25px;
-        font-weight: 700;
+        font-weight: 500;
         line-height: 30px; /* 120% */
     }
     &:hover > :nth-child(1){
@@ -58,7 +58,5 @@
     & > h2{
         align-self: baseline;
         position: relative;
-    }
-    & > :nth-child(2){
     }
 }

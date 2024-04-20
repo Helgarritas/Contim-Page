@@ -11,10 +11,10 @@ function About(props) {
   return (
     <>
       <BannerAbout></BannerAbout>
+      <IsoAbout></IsoAbout>
       <MisionAbout></MisionAbout>
       <TeamAbout></TeamAbout>
       <ClientsHome></ClientsHome>
-      <IsoAbout></IsoAbout>
     </>
   )
 }
