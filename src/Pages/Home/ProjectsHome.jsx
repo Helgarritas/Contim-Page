@@ -4,14 +4,34 @@ import { NavLink,useNavigate } from "react-router-dom";
 // Components
 import DataProjecetHome from "./Components/DataProjectHome";
 import BooleanLoading from "../BooleanLoading";
+
 export default function ProjectsHome() {
   let mycontext = useContext(BooleanLoading)
 
-  const [Roll, setRoll] = useState(1)
+  // Funcion background black de las cartas
 
-  const changeProject = (index) => {
-      setRoll(index)
+  const cards = document.querySelectorAll('.projects__card');
+  const images = document.querySelectorAll('.projects__image');
+  
+  function CardBackground(indice){
+    for(let i=0 ; i<cards.length ; i++){
+      if(indice !== i){
+        cards[i].classList.add('projects__card--background','projects__card--opacity');
+        images[i].classList.add('projects__card--opacity')
+      }
+    }
   }
+  function NoCardBackground(indice){
+    const cards = document.querySelectorAll('.projects__card');
+
+    for(let i=0 ; i<cards.length ; i++){
+      if(indice !== i){
+        cards[i].classList.remove('projects__card--background','projects__card--opacity');
+        images[i].classList.remove('projects__card--opacity')
+      }
+    }
+  }
+
 
   // Function for Change Loader
   const navigate = useNavigate();
@@ -27,68 +47,19 @@ export default function ProjectsHome() {
 
   return (
     <>
-    <header className="projects relative ">
-      <article className="projects__mastercontents">
-        <h2 className="projects__title">NUESTROS PROYECTOS</h2>
-        <div className="projectsHome__projets">
-          <div className="projects__button--container">
-            <NavLink 
-              to={`/project`} 
-              className="projects__button"
-              onClick={(e) => { delayLink(e, '/solution')}}
-            >
-            Ir
-            </NavLink>
-          </div>
-          {/* Etiqueta para Imagenes en el carrusel */}
-          {DataProjecetHome.map((obj)=>(
-            <img 
-                key={obj.id}
-                src={obj.image}
-                className="projectsHome__background" 
-                style={{
-                  width:Roll=== obj.id?`100%`:`20px`,
-                  height:Roll===obj.id?`100%`:`20px`,
-                  borderRadius:Roll===obj.id?`0`:`50%`,
-                  bottom:Roll===obj.id?`0`:`95px`,
-                  left:Roll===obj.id?`0`:`33px`,
-                }}
-            />
-          ))}
-          {/* Etiqueta para el contenido del carrusel */}
-          <div className="projectHome__descriptions">
-            {/* Etiqueta para el nombre del proyecto */}
-            <div className="projectHome__project--name">
-              {DataProjecetHome.map((obj)=>(
-                <h2 key={obj.id} style={{transform: Roll===obj.id?`translateY(0%)`:`translateY(110%)`}}>{obj.project}</h2>
-              ))}
-            </div>
-            {/* Etiqueta para la funcion que realizo la empresa en el proyecto */}
-            <div className="projectsHome__description">
-              <p>
-                {DataProjecetHome.map((obj)=>(
-                  <span key={obj.id} style={{transform: Roll===obj.id?`translate(-50%,0%)`:`translate(-50%,120%)`}}>{obj.colaboration[0]}</span>
-                ))}
-              </p>
-              <p>
-                {DataProjecetHome.map((obj)=>(
-                  <span key={obj.id} style={{transform: Roll===obj.id?`translate(-50%,0%)`:`translate(-50%,120%)`}}>{obj.colaboration[1]}</span>
-                ))}
-              </p>
+    <header className="projects relative">
+      <h2 className="projects__title">NUESTROS PROYECTOS</h2>
+      <article className="projects__grid">
+        {DataProjecetHome.map((obj,index)=>(
+          <div className="projects__card" onMouseOut={()=>NoCardBackground(index)} onMouseOver={()=>CardBackground(index)} key={obj.id}>
+            <img className="projects__image" src={obj.image} alt="" />
+            <p className="projects__card--title projects__paragraph">{obj.title}</p>
+            <div className="projects__card--content projects__paragraph">
+              <p>{obj.description[1]}</p>
+              <p>{obj.description[0]}</p>
             </div>
           </div>
-        </div>
-        {/* Botones inferiores para el carrusel */}
-        <div className="projectsHome__indexs">
-          {DataProjecetHome.map((obj)=>(
-            <p 
-              key={obj.id} 
-              className="projecytsHome__index" 
-              style={{background: Roll===obj.id?`#F5CB1F`:`transparent`}}
-              onClick={()=>changeProject(obj.id)}>
-            </p>
-          ))}
-        </div>
+        ))}
       </article>
     </header>
     </>

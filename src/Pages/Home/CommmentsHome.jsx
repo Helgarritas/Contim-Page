@@ -3,66 +3,67 @@ import { useState,useEffect,useRef } from 'react';
 
 // Components
 import DataCommentsHome from './Components/DataCommentHome';
+import MouseCursor from '../../Components/MouseCursor/MouseCursor';
 
-function CommmentsHome(props) {
+function CommmentsHome({animationMouse,setsliderWidth}) {
+  const parent = useRef();
 
-  const [multipleX, setMultipleX] = useState(0);
-  const [translateInX, settranslateInX] = useState(0)
-
-  const barraSlider = useRef();
-
-  const translateSlider = (valor) => {
-    setMultipleX(num => num + valor);
-  };
-  
   useEffect(() => {
-    const barraSliderRoll  = barraSlider.current;
-    const widthBarraSlider = barraSliderRoll.clientWidth + 150;
-    settranslateInX(widthBarraSlider * multipleX);
-  },[multipleX]);
+    const slider = document.querySelector('.commentsHome__slider--container');
+    const sliderImage = document.querySelectorAll('.commentsHome__image');
+
+    const gap = 140;
+    const imageWidth = sliderImage[0].clientWidth;
+    const sliderWidth = (imageWidth+gap)*4;
+    setsliderWidth(sliderWidth)
+    slider.style.setProperty('--gap-slider', `${gap}px`);
+    slider.style.width = `${sliderWidth}px`;
+
+    // funcion para background del body
+    const parentRoll = parent.current;
+    const windowHeight = window.innerHeight*0.2;
+
+    window.addEventListener('scroll',function(){
+      const parentTop = parentRoll.getBoundingClientRect().top; 
+      const parentBottom = parentRoll.getBoundingClientRect().bottom; 
+      
+      parentTop <= windowHeight && (parentBottom >= 70 && parentBottom <= parentRoll.clientHeight+140)
+        ?document.body.style.background = 'black'
+        :document.body.style.background = 'white'
+    })
+    
+
+    // fUNCION PwhiteRA ANIMAR MOUSE
+    animationMouse()
+
+
+  },[animationMouse,setsliderWidth,parent]);
 
   return (
     <>
-      <section className='commentsHome'>
+      <section className='commentsHome' ref={parent}>
         <article className='commentsHome__container'>
-          {/* Buttons */}
-          <div className='commentsHome__descriptions'>
-            <h2>¿ Que dicen nuestros <br />clientes ?</h2>
-            <div className='commentsHome__buttons'>
-              <button  onClick={() => translateSlider(+1)} disabled = {multipleX == 0}>
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                  <path d="M3 12H21" stroke="black" strokeOpacity="1" strokeWidth=".6" strokeLinecap="round" strokeLinejoin="round"/>
-                  <path d="M9 6L3 12L9 18" stroke="black" strokeOpacity="1" strokeWidth=".6" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              </button>
-              <button  onClick={() => translateSlider(-1)} disabled = {multipleX == -3}>
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                  <path d="M21 12L3 12" stroke="black" strokeOpacity="1" strokeWidth=".6" strokeLinecap="round" strokeLinejoin="round"/>
-                  <path d="M15 18L21 12L15 6" stroke="black" strokeOpacity="1" strokeWidth=".6" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              </button>
-            </div>  
-          </div>
           {/* Solutions */}
           <div className='commentsHome__slider'>
-            <div className='commentsHome__slider--container' style={{transform:`translateX(${translateInX}px)`}}>
+            <div className='commentsHome__slider--container mouse__animation--scope'>
               {DataCommentsHome.map((obj)=>(
                 <div 
                   className='commentsHome__sliders' 
-                  ref={barraSlider} 
                   key={obj.id}
-                  style={{ 
-                    color: obj.id*-1 == multipleX ? 'rgba(0,0,0,1)' : 'rgba(0,0,0,.2)',
-                    scale: obj.id*-1 == multipleX ? '1' : '.8'
-                }}>
-                  <p>{obj.comment}</p>
-                  <div className='commentsHome__slider--user'>
-                    <p>{obj.user}</p>
-                    <p>{obj.work}</p>
+                >
+                  <img className='commentsHome__image' src={obj.image} alt="Imagen del cliente" />
+                  <div className='commentsHome__description'>
+                    <p className='commentsHome__text'>{obj.comment}</p>
+                    <div className='commentsHome__slider--user'>
+                      <p>{obj.user}</p>
+                      <p>{obj.work}</p>
+                      <p>{obj.company}</p>
+                    </div>
                   </div>
                 </div>
               ))}
             </div>
+            <MouseCursor></MouseCursor>
           </div>
         </article>
       </section>

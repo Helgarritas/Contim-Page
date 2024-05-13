@@ -43,6 +43,7 @@
     text-align: center;
     position: relative;
     overflow: hidden;
+    transition: ease .3s;
     cursor: pointer;
     z-index: 10;
     &::before{
@@ -52,12 +53,27 @@
         position: absolute;
         left: 0;
         top: 0;
-        background: rgba(0,0,0,.2);
+        background: rgba(0,0,0,.3);
         z-index: -1;
     }
+    &::after{
+        content: '';
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: -1;
+        transition: ease .3s;
+    }
+    &:hover::after{
+        backdrop-filter: blur(4px);
+    }
+}
+.exploSolutions__card:hover{
 }
 .exploSolutions__card:hover .exploSolutions__content--text{
-    opacity: 1;
+    height: 89px;
 }
 .exploSolutions__card:hover .exploSolutions__card--img{
     transform: scale(1.2);
@@ -83,16 +99,16 @@
 }
 //* Content of card (text)
 .exploSolutions__content--text{
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: flex;
-    align-items: center;
-    transition: opacity ease .4s;
-    backdrop-filter: blur(10px);
-    opacity: 0;
+    height: 0;
+    overflow: hidden;
+    // width: 100%;
+    // position: absolute;
+    // top: 0;
+    // left: 0;
+    // display: flex;
+    // align-items: center;
+    transition: height ease .4s;
+    // opacity: 0;
 }
 //* Content of card (+)
 .exploSolutions__more{

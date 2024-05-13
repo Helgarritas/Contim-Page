@@ -14,13 +14,13 @@ function ObrasSolutions(props) {
               <h2>Obras Civiles</h2>
               <p>Ofrecemos un enfoque holístico gracias a nuestros estudios de Ingeniería Avanzada, donde nuestro equipo de expertos trabaja para idear soluciones a medida, adaptadas a los desafíos únicos de cada proyecto.</p>
             </div>
-            <div className='obrasSolution__background--container solutionHome__animation--card'>
+            <div className='obrasSolution__background--container'>
               <img 
                 className='obrasSolution__background--img'
                 src={image1} alt="" />
               <p>TUNÉL BOLIVIA</p>
             </div>
-            <div className='obrasSolution__background--container solutionHome__animation--card'>
+            <div className='obrasSolution__background--container'>
               <img 
                 className='obrasSolution__background--img'
                 src={image2} alt="" />

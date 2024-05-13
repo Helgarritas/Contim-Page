@@ -49,15 +49,14 @@
     width: 275px;
     height: 330px;
     display: flex;
-    align-items: end;
+    flex-direction: column;
+    justify-content: end;
     overflow: hidden;
     cursor: pointer;
     &:hover .teamAbout__card--img{
         filter: saturate(100%);
     }
     &:hover svg{
-        transform: translateX(0%);
-        opacity: 1;
     }
 }
 .teamAbout__card--img{  
@@ -72,24 +71,24 @@
 }
 .teamAbout__card--user{
     & > :nth-child(1){
+        // font-size: 18px;
         font-weight: 500;
+        line-height: normal;
     }
     & > :nth-child(2){
+        margin-top: -6px;
     }
 }
 .teamoAbout__card--media{
-    position: absolute;
-    top: 0px;
-    right: 15px;
     margin-top: 10px;
     display: flex;
-    flex-direction: column;
     gap: 10px;  
     & svg{
+        width: 23.5px;
+        height: 23.5px;
         transition: ease .3s;
-        opacity: 0;
         z-index: 5;
         stroke: black;
     }
-
 }
+

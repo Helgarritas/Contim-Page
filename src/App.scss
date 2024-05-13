@@ -21,8 +21,9 @@ $background-line: rgba(0,0,0,.3);
 body{
     font-family: "Oswald", sans-serif;
     font-optical-sizing: auto;
-    // background: #E8E8E8;
-    background: #F8F8F8;
+    // background: #F8F8F8;
+    background: #E8E8E8;
+    transition: background ease .36s;
     // background: white;
     color: black;
 }
@@ -33,7 +34,7 @@ p{
     text-wrap: pretty;
     font-size: 20px;
     font-weight: 300;
-    line-height: normal;
+    line-height: 26px;
 }
 li,a{
     list-style: none;
@@ -76,11 +77,12 @@ a{
 @import './Components/ButtonStrong/ButtonStrong';
 @import './Components/ButtonList/ButtonList';
 @import './Components/Loader/Loader';
+@import './Components/MouseCursor/MouseCursor';
 
 //* Animations
 .solutionHome__animation--card{
     opacity: 0;
-    transform: translateY(25%);
+    transform: translateY(21%);
     transition: ease .6s;
 }
 .solutionsHome__animation{

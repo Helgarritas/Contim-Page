@@ -1,4 +1,4 @@
-import React,{useEffect} from 'react';
+import React,{useEffect, useRef} from 'react';
 
 // Image
 // import exploración1 from '/src/assets/Users/Exploracionn.png';
@@ -30,6 +30,15 @@ function ExploracionSolu(props) {
     },
   ]
 
+  const p = useRef();
+  useEffect(() => {
+    console.log(p.current.scrollHeight);
+    
+    return () => {
+      
+    };
+  }, []);
+
   return (
     <>
       <section className='exploSolutions'>
@@ -42,11 +51,11 @@ function ExploracionSolu(props) {
           {/* Cards para soluciones */}
           <div className='exploSolutions__cards'>
             {dataSolutionsSol.map((obj)=>(
-              <div className='exploSolutions__card solutionHome__animation--card'>
+              <div className='exploSolutions__card' key={obj.id}>
                 <img className='exploSolutions__card--img' src={obj.image} alt="" />
-                <div className='exploSolutions__content'>
-                  <p>{obj.title}</p>
-                  <p className='exploSolutions__content--text'>{obj.text}</p>
+                <div className='exploSolutions__content solutionHome__animation--card'>
+                  <p>{obj.title}</p> 
+                  <p className='exploSolutions__content--text' ref={p}>{obj.text}</p>
                   <p className='exploSolutions__more'>+</p>
                 </div>
               </div>

@@ -5,11 +5,11 @@ const dataDescripFooter = [
     },
     { id: 2,
       link: '/solution',
-      description: 'Proyectos'
+      description: 'Soluciones'
     },
     { id: 3,
       link: '/solution',
-      description: 'project'
+      description: 'Proyectos'
     },
     { id: 4,
       link: '/blog/1',

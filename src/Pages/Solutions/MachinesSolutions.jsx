@@ -19,7 +19,7 @@ function MachinesSolutions(props) {
             <h2>Alquiler de Maquinaria</h2>
             <p>Proporcionamos una amplia gama de maquinaria especializada de marcas líderes. Desde equipos de carga y transporte hasta herramientas de excavación y manipulación de materiales, nuestra flota está lista para enfrentar los desafíos más exigentes en cualquier proyecto minero.</p>
           </div>
-          <div className="projectsHome__projets solutionHome__animation--card">
+          <div className="projectsHome__projets">
             {/* Etiqueta para Imagenes */}
             {DataImageMachine.map((obj)=>(
               <img 

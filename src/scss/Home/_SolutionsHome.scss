@@ -1,10 +1,8 @@
 .solutionsHome{
-    padding: 0 130px;
+    padding: 70px 106px;
     width: 100%;
-    min-height: 90vh;
     display: flex;
     align-items: center;
-    background: $yellow-primary;
     @media screen and (max-width: 768px){
         padding: 20px 32px;
     }
@@ -12,7 +10,7 @@
 .solutionsHome__container{
     width: 100%;
     display: grid;
-    gap: 70px;
+    gap: 56px;
     @media screen and (max-width: 768px){
         justify-content: center;        
         gap: 60px;
@@ -30,7 +28,7 @@
 .solutionsHome__cards{
     display: flex;
     justify-content: center;
-    gap: 60px;
+    gap: 40px;
     z-index: 2;
     @media screen and (max-width: 768px){
         flex-direction: column;
@@ -38,13 +36,15 @@
     }
 }
 .solutionsHome__card{
-    padding: 10px 10px;
-    max-width: 260px;
-    max-height: 311.8px;
+    padding: 24px 16px;
+    width: 296px;
+    height: 366px;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    overflow: hidden;
     gap: 10px;
+    position: relative;
     cursor: pointer;
     @media screen and (max-width: 768px){
         max-width: 260px;
@@ -56,44 +56,46 @@
     &:hover .solutionsHome__more{
         transform: rotate(90deg);
     }
-    &:hover .solutionsHome__button{
-        height: 27px;
-        opacity: 1;
+    &:hover .solutionsHome__image{
+        scale: 1.06;
     }
 }
-.soutionsHome__content{
+.solutionsHome__image{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: scale ease 1s;
+}
+.solutionsHome__content{
     display: grid;
     gap: 10px;
     text-align: center;
+    color: white;
+    position: relative;
     & > :nth-child(1){
-        font-size: 25px;
+        font-size: 24px;
+        font-weight: 400;
     }
     & > :nth-child(2){
-        font-size: 25px;
-        font-weight: 400;
-        line-height: normal;
+        line-height: 26px;
     }
     & > :nth-child(3){
         text-align: center;
     }
-    & > :nth-child(4){
-        font-size: 18px;
-        font-weight: 400;
-    }
-    & > :nth-child(5){
-        scale:1.5;
-        transition: ease .3s;
+    & > img{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        transition: ease .4s;
     }
 }
 
 .solutionsHome__button{
-    height: 0;
-    opacity: 0;
     position: relative;
     transition: ease .3s;
-    &::before{
-        content: '';
-        position: absolute;
-        width: 0%;
-    }
 }

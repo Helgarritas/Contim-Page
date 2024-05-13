@@ -1,0 +1,33 @@
+.mouseCursor{
+    width: 150px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 3px solid $yellow-primary;
+    border-radius: 50%;
+    opacity: 0;
+    scale: 0.7;
+    transition: translate 0.06s, transform .4s, opacity .4s, scale .4s;
+    pointer-events: none;
+    z-index: 9999;
+    & > p{
+        color: white;
+    }
+}
+.mouseCursor__inner{
+    position: absolute;
+    color: white;
+    font-size: 22px;
+    font-weight: 600;
+}
+.mouse__start{
+    opacity: 1;
+    scale: 1;
+}
+.mouse__click{
+    scale: 0.7;
+}

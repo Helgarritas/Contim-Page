@@ -1,7 +1,9 @@
 import React from 'react'
 import { NavLink,useNavigate } from 'react-router-dom'
 
-//* Components
+// image
+import arrowUp from '/src/Components/Footer/image/Arrow Up.png';
+// Components
 import dataDescripFooter from './Components/DataDescripFooter';
 import footerIcons from './FooterIcons';
 import IconsMedia from '../IconsMedia/IconsMedia';
@@ -17,6 +19,13 @@ function Footer({changeLoading}) {
       navigate(path)
     }, tiempoRestante);
   };
+
+  const scrollTop = ()=>{
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    })
+  }
   
   return (
     <>
@@ -53,6 +62,10 @@ function Footer({changeLoading}) {
               ))}
             </div>
           </div>
+          <div className='footer__copy'>
+            <p><span>&copy;</span><span>Contmin. Todos los derechos reservados.</span></p>
+            <img src={arrowUp} onClick={scrollTop}/>
+          </div>  
         </article>
       </footer>
     </>

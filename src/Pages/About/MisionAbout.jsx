@@ -35,17 +35,21 @@ function MisionAbout(props) {
     <>
       <section className='misionAbout'>
         <article className='misionAbout__container'>
-          <h2 className='misionAbout__title solutionHome__animation--card'>Nuestros Valores</h2>
+          <h2 className='misionAbout__title'>NUESTRO PROPÓSITO</h2>
           <div className='misionAbout__contents'>
-            <div className='misionAbout__content solutionHome__animation--card'>
+            <div className='misionAbout__content'>
               <img src={mision} alt="" />
-              <h2>Misión</h2>
-              <p>" Expandir nuestra presencia global y reconocidos como un empresa de elección, explorando y desarrollando yacimientos minerales de manera ética y rentable. "</p>
+              <div className='solutionHome__animation--card'>
+                <h2>Misión</h2>
+                <p>" Expandir nuestra presencia global y reconocidos como un empresa de elección, explorando y desarrollando yacimientos minerales de manera ética y rentable. "</p>
+              </div>
             </div>
-            <div className='misionAbout__content solutionHome__animation--card'>
+            <div className='misionAbout__content'>
               <img src={vision} alt="" />
-              <h2>Visión </h2>
-              <p>"Ser pioneros en prácticas de minería seguras y responsables, estableciendo estándares de la industria para la gestión ambiental y la salud ocupacional."</p>
+              <div className='solutionHome__animation--card'>
+                <h2>Visión </h2>
+                <p>"Ser pioneros en prácticas de minería seguras y responsables, estableciendo estándares de la industria para la gestión ambiental y la salud ocupacional."</p>
+              </div>
             </div>
           </div>
         </article>

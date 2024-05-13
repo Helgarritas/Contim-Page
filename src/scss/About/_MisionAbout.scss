@@ -2,6 +2,7 @@
     padding: 20px 130px 100px 130px;
     display: flex;
     align-items: center;
+    background: white;
     @media screen and (max-width: 768px){
         padding: 0 32px;
     }
@@ -37,6 +38,7 @@
     text-align: center;
     overflow: hidden;
     cursor: pointer;
+    z-index: 1;
     @media screen and (max-width: 768px){
         width: 100%;
     }
@@ -55,18 +57,20 @@
         position: absolute;
         left: 0;
         top: 0;
-        transition: ease .4s;
+        transition: ease .5s;
         z-index: -2;
     }
     &:hover > img{
+        transition: ease 1.2s;
         transform: scale(1.2);
     }
-    & > h2{
+    &  h2{
         font-size: 25px;
         font-weight: 400;
         z-index: 1;
     }
-    & > p{
+    &  p{
+        margin-top: 10px;
         line-height: normal;    
     }
 }

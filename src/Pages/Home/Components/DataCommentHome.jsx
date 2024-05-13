@@ -1,23 +1,35 @@
+// Image
+import image1 from  '/src/assets/background/Comment-Background1.png';
+import image2 from '/src/assets/background/Comment-Background2.png';
+
 const DataCommentsHome = [
   {id:0,
-    comment: '" Contamos con Contmin como nuestro socio confiable para todas nuestras operaciones .Contamos con Contmin como nuestro socio confiable para todas nuestras operaciones "',
+    comment: 'We believe in the power of individual contribution: the fire at the heart of Web3tw forms of network, digital organisations that harness the of new forms of network, digital organisations that',
     user: 'Aaron Mendoza',
-    work: 'Desingner'
+    work: 'Desingner',
+    company: 'Contmin',
+    image: image1
   },
   {id:1,
-    comment: '" Contamos con Contmin como nuestro socio confiable para todas nuestras operaciones .Contamos con Contmin como nuestro socio confiable para todas nuestras operaciones "',
+    comment: 'We believe in the power of individual contribution: the fire at the heart of Web3tw forms of network, digital organisations that harness the of new forms of network, digital organisations that',
     user: 'Diana Linarez',
-    work: 'Desingner'
+    work: 'Desingner',
+    company: 'Contmin',
+    image: image2
   },
   {id:2,
-    comment: '" Contamos con Contmin como nuestro socio confiable para todas nuestras operaciones .Contamos con Contmin como nuestro socio confiable para todas nuestras operaciones "',
+    comment: 'We believe in the power of individual contribution: the fire at the heart of Web3tw forms of network, digital organisations that harness the of new forms of network, digital organisations that',
     user: 'Sara Sianquez',
-    work: 'Desingner'
+    work: 'Desingner',
+    company: 'Contmin',
+    image: image1
   },
   {id:3,
-    comment: '" Contamos con Contmin como nuestro socio confiable para todas nuestras operaciones .Contamos con Contmin como nuestro socio confiable para todas nuestras operaciones "',
+    comment: 'We believe in the power of individual contribution: the fire at the heart of Web3tw forms of network, digital organisations that harness the of new forms of network, digital organisations that',
     user: 'Andre Benjamin',
-    work: 'Desingner'
+    work: 'Desingner',
+    company: 'Contmin',
+    image: image2
   },
 ]
 

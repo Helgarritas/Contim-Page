@@ -18,7 +18,7 @@ function TeamAbout() {
     <>
       <section className='teamAbout'>
         <article className='teamAbout__container'>
-          <h2 className="teamAbout__title">NUESTRO EQUIPO</h2>
+          <h1 className="teamAbout__title">EQUIPO</h1>
           <TeamAboutCard1 DataTeamAbout={DataTeamAbout} iconsFilter={iconsFilter}></TeamAboutCard1>
           <TeamAboutCard2 DataTeamAbout={DataTeamAbout} iconsFilter={iconsFilter}></TeamAboutCard2>
         </article>

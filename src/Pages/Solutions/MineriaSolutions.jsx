@@ -21,7 +21,7 @@ function MineriaSolutions(props) {
       <section className='mineriaSolutions relative'>
         <article className='mineriaSolutions__container'>
           {DataMineria.map((obj)=>(
-            <div className='mineriaSolutions__background--container solutionHome__animation--card' key={obj.id}>
+            <div className='mineriaSolutions__background--container' key={obj.id}>
               <img 
                   className='mineriaSolutions__background--img'
                   src={obj.image}/>

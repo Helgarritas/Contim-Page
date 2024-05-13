@@ -1,5 +1,5 @@
 .noticeHome{
-    padding: 60px 130px;
+    padding: 70px 104px;
     display: flex;
     align-items: center;
     @media screen and (max-width: 768px){
@@ -10,24 +10,10 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 80px;
+    gap: 60px;
     @media screen and (max-width: 768px){
         align-items: center;
         gap: 50px;
-    }
-}
-.noticeHome__title{
-    & > h2{
-        position: relative;
-    } 
-    & > h2::before{
-        content: '';
-        width: 100%;
-        height: .5px;
-        position: absolute;
-        top: -5px;
-        left: 0;
-        background: rgba(0,0,0,.3);
     }
 }
 //* Card
@@ -43,61 +29,65 @@
     }
 }
 .noticeHome__card{
-    padding: 20px;
-    height: 450px;
-    width: 230px;
+    padding: 24px 24px;
+    height: 510px;
+    width: 304px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    background-color: $yellow-primary;
+    justify-content: end;
+    align-items: end;
+    gap: 16px;
+    position: relative;
+    overflow: hidden;
     cursor: pointer;
+    &::before{
+        content: '';
+        width: 5px;
+        height: 30%;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        background: $yellow-primary;
+    }
     @media screen and (max-width: 768px){
-        height: 400px;
+        
     }
-    &:hover{
-        outline: .5px solid black;
-    }
-    &:nth-child(even){
-        background: white;
+    &:hover .noticeHome__image{
+        scale: 1.06;
     }
 }
-.noticeHome__card--img{
+.noticeHome__image{
     width: 100%;
     height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: ease 1s;
+    z-index: -1;
 }
 .noticeHome__card--content{
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    & > :nth-child(1){
-        font-size: 25px;
-        font-weight: 400;
-        line-height: 1.8rem;
-        letter-spacing: 0.4px;    
-    }
+    gap: 6px;
     & > :nth-child(2){
-        font-size: 18px;        
+        font-size: 22px;
+        font-weight: 400;
+        line-height: 28px;
+        letter-spacing: 0.4px;    
+        color: $content-dark-primary;
+    }
+    & > :nth-child(1){
+        font-size: 18px;      
+        color: $content-dark-secondary;  
     }
 
 }
 .noticeHome__link{
     align-self: baseline;
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 400;
+    color: $yellow-primary;
     position: relative;
-    &::before{
-        content: '';
-        width: 0%;
-        height: .5px;
-        position: absolute;
-        left: 0;
-        bottom: -1px;
-        transition: ease .3s;
-        background: black;
-    }
-    &:hover::before{
-        width: 100%;
-    }
+
 }
 

@@ -5,7 +5,7 @@ function TeamAboutCard2({DataTeamAbout,iconsFilter}) {
   return (
     <>
       <div className='teamAbout__gerencia mt-3'>
-        <h2 className='teamAbout__subtitle'>Administración</h2>
+        <h2 className='teamAbout__subtitle'>ADMINISTRACIÓN</h2>
         <div>
           <div className="teamoAbout__cards">
             {DataTeamAbout.map((obj, index) => (

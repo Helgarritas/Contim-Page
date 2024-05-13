@@ -1,18 +1,28 @@
 import React, { useRef, useEffect, useState, useCallback } from 'react';
-import { NavLink,useNavigate } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import logo from '/src/assets/Logo/Logo-Conmin.png';
 
+// Functions
+import removeXNav from './Components/removeXNav';
+
+
 function BarNav({ changeLoading }) {
-  const buttonListRef = useRef(null);
-  const barraNav = useRef(null);
+  const buttonList = useRef(null),
+        buttonListRoll = buttonList.current;
+  const barraNav = useRef(null),
+        barraNavRoll = barraNav.current;
   const prevScrollPos = useRef(0);
   const [visible, setVisible] = useState(false);
   const [visible2, setVisible2] = useState(true);
+  const navigate = useNavigate();
+  const tiempoRestante = 1000; 
 
   const handleScroll = useCallback(() => {
-    if (buttonListRef.current.classList.contains('moveBtnlist') || barraNav.current.classList.contains('transform__barraNav')) {
-      buttonListRef.current.classList.remove('moveBtnlist');
-      barraNav.current.classList.remove('transform__barraNav');
+    if (buttonListRoll && barraNavRoll) {
+      if (buttonListRoll.classList.contains('moveBtnlist') || barraNavRoll.classList.contains('transform__barraNav')) {
+        buttonListRoll.classList.remove('moveBtnlist');
+        barraNavRoll.classList.remove('transform__barraNav');
+      }
     }
     const currentScrollPos = window.pageYOffset;
     setVisible(prevScrollPos.current > currentScrollPos || currentScrollPos < 100);
@@ -27,27 +37,21 @@ function BarNav({ changeLoading }) {
     };
   }, [handleScroll]);
 
-  const removeXNav = () => {
-    if (buttonListRef.current.classList.contains('moveBtnlist') || barraNav.current.classList.contains('transform__barraNav')) {
-      buttonListRef.current.classList.remove('moveBtnlist');
-      barraNav.current.classList.remove('transform__barraNav');
+  // Button for translate barranav.
+  removeXNav(buttonListRoll,barraNavRoll);
+
+  const actionButton = () => {
+    if (buttonListRoll && barraNavRoll) {
+      buttonListRoll.classList.toggle('moveBtnlist');
+      barraNavRoll.classList.toggle('transform__barraNav');
     }
   };
 
-  const actionButton = () => {
-    buttonListRef.current.classList.toggle('moveBtnlist');
-    barraNav.current.classList.toggle('transform__barraNav');
-  };
-
-  //* Function for time change route
-  let navigate = useNavigate();
-  const tiempoRestante = 1000; 
-
   const delayLink = (e, path) => {
     e.preventDefault();
-    changeLoading(true)
+    changeLoading(true);
     setTimeout(() => {
-      navigate(path)
+      navigate(path);
     }, tiempoRestante);
   };
   
@@ -66,18 +70,18 @@ function BarNav({ changeLoading }) {
           onClick={actionButton} 
           style={{ opacity: visible2 ? '1' : '0', transitionDelay: visible2 ? '.15s' : '0s' }}
         >
-          <div className="nav__button" ref={buttonListRef}>
+          <div className="nav__button" ref={buttonList}>
             <span className="l1 sp"></span>
             <span className="l2 sp"></span>
             <span className="l3 sp"></span>
           </div>
         </article>
         <div className="nav__links" ref={barraNav} style={{ opacity: visible2 ? '1' : '0', transitionDelay: visible2 ? '.15s' : '0s' }}>
-          <NavLink className={'nav__link'} to="/" onClick={(e) => { delayLink(e, "/")}}>Portada</NavLink>
-          <NavLink className={'nav__link'} to="/about" onClick={(e) => { delayLink(e, "/about")}}>Nosotros</NavLink>
-          <NavLink className={'nav__link'} to="/solution" onClick={(e) => { delayLink(e, "/solution")}}>Soluciones</NavLink>
-          <NavLink className={'nav__link'} to="/project" onClick={(e) => { delayLink(e, "/project")}}>Proyectos</NavLink>
-          <NavLink className={'nav__link'} to="/blog/1" onClick={(e) => { delayLink(e, "/blog/1")}}>Blog</NavLink>
+          <NavLink className={'nav__link'} to="/" onClick={(e) => { delayLink(e, "/"); removeXNav(); }}>Portada</NavLink>
+          <NavLink className={'nav__link'} to="/about" onClick={(e) => { delayLink(e, "/about"); removeXNav(); }}>Nosotros</NavLink>
+          <NavLink className={'nav__link'} to="/solution" onClick={(e) => { delayLink(e, "/solution"); removeXNav(); }}>Soluciones</NavLink>
+          <NavLink className={'nav__link'} to="/project" onClick={(e) => { delayLink(e, "/project"); removeXNav(); }}>Proyectos</NavLink>
+          <NavLink className={'nav__link'} to="/blog/1" onClick={(e) => { delayLink(e, "/blog/1"); removeXNav(); }}>Blog</NavLink>
         </div>
       </article>
     </nav>

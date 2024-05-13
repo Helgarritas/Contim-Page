@@ -1,17 +1,17 @@
 import React from 'react';
 import { useRef, useEffect } from 'react';
-import { NavLink } from 'react-router-dom';
 
-// Image
-import backgroundBannerH from "/src/assets/background/Banner-Inicio-Movil.png" ;
 // Components
 import ButtonStrong from '../../Components/ButtonStrong/ButtonStrong';
+// image
+import background from '/src/assets/background/Banner-Home-Background.png';
 
 function BannerHome(props) {
 
   return (
     <>
       <section className='bannerHome'>
+        <img className='bannerHome__background' src={background} alt="" />
         <article className='bannerHome__container'>
           <div className='bannerHome__content solutionHome__animation--card' style={{transitionDelay:'1.2s'}}>
             <h1>trabajo con <br /> grandes resultados</h1>
@@ -22,10 +22,10 @@ function BannerHome(props) {
         <picture>
           <source 
             className='bannerhome__background'
-            src={backgroundBannerH}
+            // src={backgroundBannerH}
             media="(max-width: 768px)"
           />
-          <img className='bannerhome__background' src="/src/assets/background/Banner-Inicio.jpg"/>
+          {/* <img className='bannerhome__background' src="/src/assets/background/Banner-Inicio.jpg"/> */}
         </picture>
       </section>
     </>

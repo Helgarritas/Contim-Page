@@ -1,4 +1,4 @@
-import React,{useCallback,useEffect} from 'react'
+import React,{useCallback,useEffect,useState} from 'react'
 
 import BannerHome from './BannerHome';
 import AboutHome from './AboutHome';
@@ -7,8 +7,12 @@ import ProjectsHome from './ProjectsHome';
 import ClientsHome from './ClientsHome';
 import CommmentsHome from './CommmentsHome';
 import NoticeHome from './NoticeHome';
+// Components
+import MouseTracker from '../../Components/MouseCursor/MuseTracker';
+
 
 function Home() {
+  const [sliderWidth, setsliderWidth] = useState(0)
 
   const handleScroll = useCallback(() => {
     const cards = document.querySelectorAll('.solutionHome__animation--card');
@@ -37,13 +41,19 @@ function Home() {
 
   return (
     <>
-      <BannerHome handleScroll={handleScroll}></BannerHome>
-      <AboutHome></AboutHome>
-      <SolutionsHome handleScroll={handleScroll}></SolutionsHome>
-      <ProjectsHome></ProjectsHome>
-      <ClientsHome></ClientsHome>
-      <CommmentsHome></CommmentsHome>
-      <NoticeHome></NoticeHome>
+      <MouseTracker sliderWidth={sliderWidth}>
+        {(animationMouse) => (
+          <>
+            <BannerHome handleScroll={handleScroll}></BannerHome>
+            <AboutHome></AboutHome>
+            <SolutionsHome handleScroll={handleScroll}></SolutionsHome>
+            <ProjectsHome></ProjectsHome>
+            <ClientsHome></ClientsHome>
+            <CommmentsHome setsliderWidth={setsliderWidth} animationMouse={animationMouse}></CommmentsHome>
+            <NoticeHome></NoticeHome>          
+          </>
+        )}
+      </MouseTracker>
     </>
   )
 }
